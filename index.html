@@ -835,6 +835,7 @@ volumes; degrades gracefully if one dies</pre>
   function esc(s){return s.replace(/[&<>]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[ch]})}
   function print(html){out.insertAdjacentHTML('beforeend',html+'\n');out.scrollTop=out.scrollHeight}
   var files={
+    'focus':'offense   web & API pentest (PTES, OWASP), bug bounty\ndefense   deep-learning intrusion detection, SIEM + ML pipelines\nai        PyTorch, attention models, LLM routing, imbalance handling\nplatform  AWS serverless, Docker, Kafka, Spark, Linux',
     'projects':'CF-01  ids-blockchain   CNN-BiLSTM IDS + MultiChain audit log   macro-F1 0.7711\nCF-02  ecoroute         LLM gateway by quality, cost, sensitivity  -69.7% cost\nCF-03  siem-aws         Wazuh → Lambda ML scoring → S3\nCF-04  firewall.py      stateful filtering, structured logs\nCF-05  anomaly-logs     clustering vs false positives\n<span class="dim">open one: cat ids-blockchain · cat ecoroute</span>',
     'models':'<span class="v">MC-01</span>  flow classifier   Conv1d → BiLSTM → attention · 0.98M params\n       16.2M flows · 15 classes · macro-F1 0.7711 · benign recall 98.6%\n<span class="v">MC-02</span>  ecoroute router   graph model → calibrated P(correct)\n       -69.7% cost vs GPT-4o · -0.27 pt accuracy · 74 ms median\n<span class="dim">train --explain for the lesson I learned the hard way</span>',
     'experience':'2026-     Intigriti        bug bounty · DHL, Monzo, Spacelift\n2025      Plutus Solutions web & API pentest internship (PTES, OWASP)\n2026-27   ISIMA            MSc ICS (ML, decision science), double degree\n2022-27   ENSAM Casablanca engineering, cybersecurity & cloud',
@@ -847,9 +848,9 @@ volumes; degrades gracefully if one dies</pre>
   var cmds={
     help:function(){return 'whoami  ls  cat &lt;file&gt;  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
     whoami:function(){return 'walid ichchou, security engineer who trains models'},
-    ls:function(){return 'models  projects  experience  intigriti  ctf  contact  ids-blockchain  ecoroute  cv.pdf'},
+    ls:function(){return 'focus.txt  models  projects  experience  intigriti  ctf  contact  ids-blockchain  ecoroute  cv.pdf'},
     cat:function(a){var f=(a[0]||'').replace(/\.(txt|md)$/,'');return files[f]||('<span class="err">cat: '+esc(a[0]||'')+': No such file</span>')},
-    models:function(){return files.models},projects:function(){return files.projects},experience:function(){return files.experience},ctf:function(){return files.ctf},contact:function(){return files.contact},intigriti:function(){return files.intigriti},
+    focus:function(){return files.focus},models:function(){return files.models},projects:function(){return files.projects},experience:function(){return files.experience},ctf:function(){return files.ctf},contact:function(){return files.contact},intigriti:function(){return files.intigriti},
     train:function(a){
       if(a[0]==='--explain')return 'oversampling + weighted sampling + class weights = uniform prior\n→ benign recall 0.29. fix: logit adjustment + focal loss,\nthen add the class prior back at inference: macro-F1 0.64 → 0.77';
       var lines=['epoch 01  loss 1.412  macro-F1 0.412','epoch 04  loss 0.733  macro-F1 0.618','epoch 09  loss 0.418  macro-F1 0.722','epoch 14  loss 0.351  macro-F1 0.771'],k=0;
