@@ -85,7 +85,10 @@ body.has-pointer .glow,body.has-pointer .ring{opacity:1}
 .btn{font-family:var(--f-mono);font-size:.78rem;border:1px solid var(--line-strong);background:var(--panel);color:var(--fg);padding:.45rem .7rem;cursor:pointer;white-space:nowrap;border-radius:4px}
 .btn:hover{border-color:var(--signal);color:var(--signal);box-shadow:0 0 18px rgba(110,231,255,.25)}
 .btn kbd{font-family:inherit;color:var(--signal)}
-@media (max-width:940px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+a.btn{text-decoration:none;display:inline-block}
+.btn.mail{background:linear-gradient(100deg,var(--signal),var(--haze));color:var(--signal-ink);border-color:transparent;font-weight:600}
+.btn.mail:hover{color:var(--signal-ink);box-shadow:0 0 22px rgba(110,231,255,.4)}
+@media (max-width:940px){.nav ul{display:none}.nav .btn.mail{margin-left:auto}}
 
 /* report header */
 .header{padding-block:clamp(2rem,5vw,3.5rem) 1rem}
@@ -355,6 +358,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <li><a href="#toolkit" data-scramble>Toolkit</a></li>
       <li><a href="#contact" data-scramble>Contact</a></li>
     </ul>
+    <a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Hello%20Walid">Contact me</a>
     <button class="btn" id="open-shell" type="button" title="Open the shell (press `)">Shell <kbd>`</kbd></button>
   </div>
 </nav>
@@ -374,7 +378,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <p class="role">// pentest · bug bounty · <b>deep learning for detection</b> · cloud</p>
         <p class="lede">I break web apps and APIs, then train the models that catch the next attack. Engineering student in cybersecurity and cloud at ENSAM Casablanca, now in a double degree in machine learning and decision science at ISIMA. <em>Bug bounty hunter on Intigriti.</em></p>
         <div class="cta">
-          <a class="primary" href="#lab">Open the AI lab</a>
+          <a class="primary" href="mailto:walidichchou711@gmail.com?subject=Hello%20Walid">Email me</a>
+          <a href="#lab">Open the AI lab</a>
           <a href="#cases">Case files</a>
           <a href="assets/cv-walid-ichchou.pdf" target="_blank" rel="noopener">CV (PDF, FR)</a>
           <a href="https://github.com/waliddoesthis" target="_blank" rel="noopener">GitHub ↗</a>
@@ -730,7 +735,7 @@ volumes; degrades gracefully if one dies</pre>
         <p style="max-width:32em;color:var(--muted)">Security, cloud, DevOps or AI. Anywhere in France. Write in French or English.</p>
       </div>
       <ul class="channels spot">
-        <li><div><span class="k">Email</span><span class="v" id="email">walidichchou711@gmail.com</span></div><button class="btn" type="button" id="copy-email">Copy</button></li>
+        <li><div><span class="k">Email</span><span class="v" id="email">walidichchou711@gmail.com</span></div><span style="display:flex;gap:.5rem"><a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Hello%20Walid">Send email</a><button class="btn" type="button" id="copy-email">Copy</button></span></li>
         <li><div><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/walid-ichchou-64b08a332" target="_blank" rel="noopener">in/walid-ichchou ↗</a></div></li>
         <li><div><span class="k">Intigriti</span><a class="v" href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener">dilawishere ↗</a></div></li>
         <li><div><span class="k">GitHub</span><a class="v" href="https://github.com/waliddoesthis" target="_blank" rel="noopener">waliddoesthis ↗</a></div></li>
@@ -846,7 +851,8 @@ volumes; degrades gracefully if one dies</pre>
     'ecoroute':'routes LLM calls by predicted quality, cost and data sensitivity\n-69.7% cost vs GPT-4o at -0.27 pt accuracy · 74 ms median decision\nhttps://github.com/waliddoesthis/ecoroute'
   };
   var cmds={
-    help:function(){return 'whoami  ls  cat &lt;file&gt;  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
+    mail:function(){location.href='mailto:walidichchou711@gmail.com?subject=Hello%20Walid';return 'opening your mail app…'},
+    help:function(){return 'whoami  ls  cat &lt;file&gt;  mail  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
     whoami:function(){return 'walid ichchou, security engineer who trains models'},
     ls:function(){return 'focus.txt  models  projects  experience  intigriti  ctf  contact  ids-blockchain  ecoroute  cv.pdf'},
     cat:function(a){var f=(a[0]||'').replace(/\.(txt|md)$/,'');return files[f]||('<span class="err">cat: '+esc(a[0]||'')+': No such file</span>')},
