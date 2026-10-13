@@ -343,6 +343,14 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
 .lw-item span{min-width:0}
 .mono-logo{flex:none;width:1.9rem;height:1.9rem;font-size:.9rem!important;border-radius:6px;display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-stretch:62%;font-size:.78rem;letter-spacing:.02em;color:var(--bg);background:linear-gradient(135deg,var(--c,var(--signal)),var(--haze))}
 .tile{flex:none;width:3rem;height:3rem;border-radius:10px;border:1px solid var(--line-strong);background:rgba(5,7,14,.55);display:grid;place-items:center;font-size:1.5rem;color:var(--fg)}
+.plate{flex:none;display:inline-flex;align-items:center;justify-content:center;height:2.3rem;padding:.3rem .45rem;background:#fff;border-radius:6px;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 6px 18px -8px rgba(110,231,255,.35);transition:box-shadow .25s,transform .25s}
+.plate img{height:100%;width:auto;max-width:5.6rem;object-fit:contain;display:block}
+.lw-item:hover .plate{box-shadow:0 0 0 1px rgba(110,231,255,.5),0 0 22px -4px rgba(110,231,255,.55);transform:scale(1.04)}
+.tile:has(.plate){width:auto;height:auto;padding:0;border:0;background:none}
+.tile .plate{height:3rem;padding:.4rem .55rem}
+.tile .plate img{max-width:7rem}
+.rec-org .plate{height:1.7rem;padding:.2rem .35rem}
+.rec-org .plate img{max-width:4.5rem}
 .tile .mono-logo{width:2.2rem;height:2.2rem;font-size:.85rem}
 .eng-head{display:flex;gap:.9rem;align-items:flex-start}
 .rec-org{display:inline-flex;align-items:center;gap:.55rem}
@@ -462,9 +470,9 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
   <section class="logowall wrap" aria-label="Organizations">
     <div class="label rowlabel">Studied, worked and competed with</div>
     <div class="lw">
-      <div class="lw-item"><span class="mono-logo" style="--c:#6ee7ff" aria-hidden="true">EN</span><span><b>ENSAM Casablanca</b><small>Engineering · 2022–27</small></span></div>
-      <div class="lw-item"><span class="mono-logo" style="--c:#5ff0b0" aria-hidden="true">IS</span><span><b>ISIMA</b><small>MSc ICS · 2026–27</small></span></div>
-      <div class="lw-item"><span class="mono-logo" style="--c:#ffc46b" aria-hidden="true">PS</span><span><b>Plutus Solutions</b><small>Pentest internship</small></span></div>
+      <div class="lw-item"><span class="plate"><img src="assets/logos/ensam-mark.png" alt="ENSAM Casablanca logo" loading="lazy"></span><span><b>ENSAM Casablanca</b><small>Engineering · 2022–27</small></span></div>
+      <div class="lw-item"><span class="plate"><img src="assets/logos/isima-mark.png" alt="ISIMA logo" loading="lazy"></span><span><b>ISIMA</b><small>MSc ICS · 2026–27</small></span></div>
+      <div class="lw-item"><span class="plate"><img src="assets/logos/plutus-mark.png" alt="Plutus Solutions logo" loading="lazy"></span><span><b>Plutus Solutions</b><small>Pentest internship</small></span></div>
       <div class="lw-item"><svg class="ico" style="--c:#7c8cff" aria-hidden="true"><use href="#i-intigriti"/></svg><span><b>Intigriti</b><small>Bug bounty</small></span></div>
       <div class="lw-item"><svg class="ico" style="--c:#1ba0d7" aria-hidden="true"><use href="#i-cisco"/></svg><span><b>Cisco NetAcad</b><small>CTF · 2nd place</small></span></div>
       <div class="lw-item"><svg class="ico" style="--c:#EE3124" aria-hidden="true"><use href="#i-fortinet"/></svg><span><b>Fortinet</b><small>Certified</small></span></div>
@@ -690,7 +698,7 @@ volumes; degrades gracefully if one dies</pre>
         <li>
           <div class="when">Jun → Jul 2025</div>
           <div>
-            <div class="eng-head"><span class="tile"><span class="mono-logo" style="--c:#ffc46b" aria-hidden="true">PS</span></span><div><h3>Web &amp; API pentest internship</h3>
+            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/plutus-mark.png" alt="Plutus Solutions logo" loading="lazy"></span></span><div><h3>Web &amp; API pentest internship</h3>
             <div class="org">Plutus Solutions</div></div></div>
             <ul>
               <li>Security audits of web applications and APIs following PTES and the OWASP methodology.</li>
@@ -703,7 +711,7 @@ volumes; degrades gracefully if one dies</pre>
         <li>
           <div class="when">2026 → 2027</div>
           <div>
-            <div class="eng-head"><span class="tile"><span class="mono-logo" style="--c:#5ff0b0" aria-hidden="true">IS</span></span><div><h3>MSc Computer Science, ICS track</h3>
+            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/isima-mark.png" alt="ISIMA logo" loading="lazy"></span></span><div><h3>MSc Computer Science, ICS track</h3>
             <div class="org">ISIMA · Clermont Auvergne INP · double degree</div></div></div>
             <ul><li>Decision under uncertainty, machine learning &amp; data mining, optimization, HPC. Taught in English.</li></ul>
           </div>
@@ -712,7 +720,7 @@ volumes; degrades gracefully if one dies</pre>
         <li>
           <div class="when">2022 → 2027</div>
           <div>
-            <div class="eng-head"><span class="tile"><span class="mono-logo" style="--c:#6ee7ff" aria-hidden="true">EN</span></span><div><h3>Engineering degree, Cybersecurity &amp; Cloud</h3>
+            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/ensam-mark.png" alt="ENSAM Casablanca logo" loading="lazy"></span></span><div><h3>Engineering degree, Cybersecurity &amp; Cloud</h3>
             <div class="org">ENSAM Casablanca · Université Hassan II</div></div></div>
             <ul><li>Cloud, DevOps, systems architecture, network and application security.</li></ul>
           </div>
@@ -733,7 +741,7 @@ volumes; degrades gracefully if one dies</pre>
         <table class="rec">
           <thead><tr><th>Result</th><th>Event or certification</th><th>Date</th></tr></thead>
           <tbody>
-            <tr><td class="rank">1st</td><td><span class="rec-org"><span class="mono-logo" style="--c:#6ee7ff" aria-hidden="true">EN</span><span>Project competition, ENSAM Casablanca, for the AI intrusion detection platform</span></span></td><td>2026</td></tr>
+            <tr><td class="rank">1st</td><td><span class="rec-org"><span class="plate"><img src="assets/logos/ensam-mark.png" alt="ENSAM Casablanca logo" loading="lazy"></span><span>Project competition, ENSAM Casablanca, for the AI intrusion detection platform</span></span></td><td>2026</td></tr>
             <tr><td class="rank">2nd</td><td><span class="rec-org"><svg class="ico" style="--c:#1ba0d7" aria-hidden="true"><use href="#i-cisco"/></svg><span>SecureIT CTF, Africa &amp; Middle East, Cisco Networking Academy</span></span></td><td>2025</td></tr>
             <tr><td class="rank">Cert</td><td><span class="rec-org"><svg class="ico" style="--c:#EE3124" aria-hidden="true"><use href="#i-fortinet"/></svg><span>FortiSASE &amp; SD-WAN 7.6 Core Administrator, Fortinet</span></span></td><td>Apr 2026</td></tr>
             <tr><td class="rank">Cert</td><td><span class="rec-org"><svg class="ico" style="--c:#e33b4e" aria-hidden="true"><use href="#i-tryhackme"/></svg><span>Cyber Security 101, TryHackMe</span></span></td><td>Jun 2025</td></tr>
