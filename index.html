@@ -17,7 +17,7 @@
 <meta name="theme-color" content="#05070e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&family=Silkscreen&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
 /* Layout: a security assessment report floating in a night-time neural net.
    Report sections, case files, model cards and a working shell, over a live constellation
@@ -322,6 +322,55 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);padding-bloc
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 
+/* main quest */
+.quest{position:relative;margin-top:.5rem;padding:clamp(1.2rem,3vw,2rem);border:1px solid rgba(255,211,107,.35);border-radius:10px;background:linear-gradient(160deg,rgba(255,211,107,.07),rgba(14,19,36,.75) 40%,rgba(177,140,255,.08));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 0 50px -18px rgba(255,211,107,.45);overflow:hidden}
+.quest::before,.quest::after{content:"";position:absolute;width:22px;height:22px;border:2px solid var(--sev-med);pointer-events:none}
+.quest::before{top:8px;left:8px;border-right:0;border-bottom:0}
+.quest::after{bottom:8px;right:8px;border-left:0;border-top:0}
+.hud{font-family:"Silkscreen",var(--f-mono);text-transform:uppercase;letter-spacing:.04em}
+.quest-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.quest-flag{display:inline-flex;align-items:center;gap:.6rem;color:var(--sev-med);font-size:.95rem}
+.quest-flag .bang{display:inline-grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--sev-med);color:var(--bg);font-size:1rem;box-shadow:0 0 18px rgba(255,211,107,.7)}
+@media (prefers-reduced-motion:no-preference){.quest-flag .bang{animation:bob 1.6s ease-in-out infinite}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.quest-status{font-size:.72rem;color:var(--ok);border:1px solid var(--ok);padding:.2rem .5rem;border-radius:3px}
+.quest-status i{display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:var(--ok);margin-right:.4rem;box-shadow:0 0 8px var(--ok)}
+@media (prefers-reduced-motion:no-preference){.quest-status i{animation:blink 1.2s steps(1) infinite}}
+.quest-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1.5rem 2.5rem;margin-top:1.2rem}
+@media (max-width:860px){.quest-grid{grid-template-columns:1fr}}
+.quest h3{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;font-stretch:62%;text-transform:uppercase;line-height:.92;background:linear-gradient(100deg,var(--fg),var(--sev-med) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quest .meta-row{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:.8rem;font-size:.68rem;color:var(--muted)}
+.quest .meta-row b{color:var(--fg);font-weight:400}
+.quest p.brief{margin:1rem 0 0;max-width:38em}
+.xp{margin-top:1.3rem}
+.xp-top{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);margin-bottom:.35rem}
+.xp-bar{height:12px;border:1px solid rgba(255,211,107,.5);border-radius:2px;padding:2px;background:rgba(5,7,14,.6);overflow:hidden}
+.xp-bar span{display:block;height:100%;width:35%;background:repeating-linear-gradient(90deg,var(--sev-med) 0 8px,rgba(255,211,107,.55) 8px 10px);box-shadow:0 0 12px rgba(255,211,107,.6)}
+@media (prefers-reduced-motion:no-preference){.xp-bar span{animation:scanbar 2.8s ease-in-out infinite alternate}}
+@keyframes scanbar{from{transform:translateX(-10%)}to{transform:translateX(200%)}}
+.objectives{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.objectives li{display:flex;gap:.7rem;align-items:flex-start;font-size:.95rem;line-height:1.4}
+.objectives li::before{content:"";flex:none;width:.7rem;height:.7rem;margin-top:.35rem;transform:rotate(45deg);border:2px solid var(--muted)}
+.objectives li.done{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,211,107,.5)}
+.objectives li.done::before{background:var(--sev-med);border-color:var(--sev-med)}
+.objectives li.active{color:var(--fg)}
+.objectives li.active::before{border-color:var(--sev-med);box-shadow:0 0 10px rgba(255,211,107,.8)}
+.objectives li.locked{color:var(--muted);opacity:.75}
+.obj-head{font-size:.72rem;color:var(--sev-med);margin-bottom:.7rem}
+.loot{display:flex;flex-wrap:wrap;gap:.4rem}
+.loot span{font-size:.62rem;padding:.3rem .5rem;border:1px solid rgba(177,140,255,.5);color:var(--haze);border-radius:3px;background:rgba(177,140,255,.08)}
+#chirp{display:block;width:100%;height:120px;margin-top:1.2rem;border:1px solid var(--line);border-radius:6px;background:rgba(5,7,14,.6)}
+.chirp-cap{font-size:.6rem;color:var(--muted);margin-top:.35rem}
+.log-done{margin-top:1.5rem}
+.log-done>.hud{font-size:.72rem;color:var(--muted);margin-bottom:.7rem;display:block}
+.qdone{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+@media (max-width:760px){.qdone{grid-template-columns:1fr}}
+.qdone a{display:flex;flex-direction:column;gap:.25rem;padding:.8rem .9rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-decoration:none;transition:border-color .25s,transform .25s}
+.qdone a:hover{border-color:var(--ok);transform:translateY(-2px)}
+.qdone .hud{font-size:.62rem;color:var(--ok)}
+.qdone b{font-family:var(--f-display);font-stretch:80%;font-size:1.15rem;color:var(--fg)}
+.qdone small{font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
+
 /* logos */
 .ico{width:1.05em;height:1.05em;fill:currentColor;flex:none;vertical-align:-.17em;transition:color .25s,filter .25s}
 .ico.brand{color:var(--c)}
@@ -384,8 +433,8 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
 <div class="page">
 <div class="ticker" role="note" aria-label="Status">
   <div class="ticker-track">
-    <span>Public // Portfolio // Ref WI-2026-01 <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
-    <span aria-hidden="true">Public // Portfolio // Ref WI-2026-01 <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
+    <span>Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
+    <span aria-hidden="true">Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
   </div>
 </div>
 
@@ -393,6 +442,7 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
   <div class="wrap">
     <a class="prompt" href="#top"><b>walid</b>@ichchou:~$<i aria-hidden="true"></i></a>
     <ul>
+      <li><a href="#quest" data-scramble>Quest</a></li>
       <li><a href="#summary" data-scramble>Summary</a></li>
       <li><a href="#lab" data-scramble>AI lab</a></li>
       <li><a href="#cases" data-scramble>Case files</a></li>
@@ -484,6 +534,58 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
       <div class="lw-item"><svg class="ico" style="--c:#FFCC00" aria-hidden="true"><use href="#i-dhl"/></svg><span><b>DHL</b><small>Intigriti program</small></span></div>
       <div class="lw-item"><svg class="ico" style="--c:#ff4f40" aria-hidden="true"><use href="#i-monzo"/></svg><span><b>Monzo</b><small>Intigriti program</small></span></div>
       <div class="lw-item"><span class="mono-logo" style="--c:#b18cff" aria-hidden="true">SL</span><span><b>Spacelift</b><small>Intigriti program</small></span></div>
+    </div>
+  </section>
+
+  <!-- MAIN QUEST: to start a new quest, edit the title, briefing, objectives and loot below,
+       and move the old one into "Completed quests". Objective states: done | active | locked. -->
+  <section class="part" id="quest">
+    <div class="wrap">
+      <div class="part-head">
+        <span class="num">§0</span>
+        <h2 data-scramble>Main quest</h2>
+        <p>What I am working on right now. Every new project becomes the active quest.</p>
+      </div>
+      <article class="quest">
+        <div class="quest-top">
+          <span class="quest-flag hud"><span class="bang" aria-hidden="true">!</span>Main quest · active</span>
+          <span class="quest-status hud"><i aria-hidden="true"></i>In progress</span>
+        </div>
+        <div class="quest-grid">
+          <div>
+            <h3>LoRaWAN security research</h3>
+            <div class="meta-row hud"><span>Class <b>Research</b></span><span>Zone <b>IoT · LPWAN · radio</b></span><span>Started <b>2026</b></span></div>
+            <p class="brief">Investigating the security of LoRaWAN, the long-range, low-power radio protocol behind smart meters, trackers and city sensors. The focus: how devices join the network, how session keys are derived and protected, and where real deployments leave gaps.</p>
+            <div class="xp">
+              <div class="xp-top hud"><span>Quest progress</span><span>Exploring…</span></div>
+              <div class="xp-bar" aria-hidden="true"><span></span></div>
+            </div>
+            <canvas id="chirp" aria-label="Animated LoRa chirp spectrum"></canvas>
+            <div class="chirp-cap hud">LoRa chirp spread spectrum · illustration</div>
+          </div>
+          <div>
+            <div class="obj-head hud">Objectives</div>
+            <ul class="objectives">
+              <li class="done">Accept the quest</li>
+              <li class="active">Study the LoRaWAN security model: OTAA and ABP joins, root and session keys, frame counters</li>
+              <li class="active">Survey known attacks on LoRaWAN 1.0.x and 1.1</li>
+              <li class="locked">Build a lab: end device, gateway and network server</li>
+              <li class="locked">Test the join procedure and replay protection</li>
+              <li class="locked">Publish the write-up in Field notes</li>
+            </ul>
+            <div class="obj-head hud" style="margin-top:1.3rem">Loot</div>
+            <div class="loot hud"><span>+ IoT security</span><span>+ Radio / LPWAN</span><span>+ Protocol analysis</span><span>+ Applied crypto</span></div>
+          </div>
+        </div>
+      </article>
+      <div class="log-done">
+        <span class="hud">Completed quests</span>
+        <div class="qdone">
+          <a href="#cases"><span class="hud">✓ Cleared 2026 · 1st place</span><b>IDS-Blockchain</b><small>Deep-learning IDS on 16.2M flows</small></a>
+          <a href="#cases"><span class="hud">✓ Cleared 2026</span><b>EcoRoute</b><small>LLM routing, −69.7% cost</small></a>
+          <a href="#recognition"><span class="hud">✓ Cleared 2025 · 2nd place</span><b>SecureIT CTF</b><small>Africa &amp; Middle East final</small></a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -907,6 +1009,27 @@ volumes; degrades gracefully if one dies</pre>
   document.querySelectorAll('.stack li').forEach(function(li){deco(li,li.textContent.trim())});
   document.querySelectorAll('.scope li').forEach(function(li){var k=li.firstChild&&li.firstChild.nodeType===3?li.firstChild.textContent.trim():'';var w=document.createElement('span');w.className='chip-i';w.style.cssText='font:inherit;color:inherit;font-family:inherit';if(MAP[k]){li.firstChild.textContent='';w.textContent=k;li.insertBefore(w,li.firstChild);deco(w,k)}});
 
+  /* LoRa chirp waterfall */
+  (function(){
+    var cv=document.getElementById('chirp');if(!cv)return;var g=cv.getContext('2d'),w,h,t0=performance.now();
+    function sz(){var d=Math.min(window.devicePixelRatio||1,2);w=cv.clientWidth;h=cv.clientHeight;cv.width=w*d;cv.height=h*d;g.setTransform(d,0,0,d,0,0)}
+    function draw(now){
+      var t=(now-t0)/1000;g.clearRect(0,0,w,h);
+      g.strokeStyle='rgba(150,170,255,.10)';g.lineWidth=1;
+      for(var x=0;x<w;x+=w/12){g.beginPath();g.moveTo(x,0);g.lineTo(x,h);g.stroke()}
+      var sym=w/5,off=reduce?0:(t*sym*0.6)%sym;
+      for(var k=-1;k<7;k++){
+        var x0=k*sym-off;
+        var gr=g.createLinearGradient(x0,h,x0+sym,0);gr.addColorStop(0,'rgba(255,211,107,.15)');gr.addColorStop(1,'rgba(255,211,107,.95)');
+        g.strokeStyle=gr;g.lineWidth=2;g.shadowColor='rgba(255,211,107,.6)';g.shadowBlur=8;
+        g.beginPath();g.moveTo(x0,h-8);g.lineTo(x0+sym,8);g.stroke();g.shadowBlur=0;
+      }
+      g.fillStyle='rgba(110,231,255,.6)';g.font='10px "JetBrains Mono",monospace';g.fillText('SF7 · 125 kHz · up-chirps',8,14);
+      if(!reduce)requestAnimationFrame(draw);
+    }
+    sz();addEventListener('resize',function(){sz();if(reduce)draw(performance.now())});requestAnimationFrame(draw);
+  })();
+
   /* shell */
   var out=document.getElementById('shell-out'),form=document.getElementById('shell-form'),input=document.getElementById('shell-input'),shell=document.getElementById('shell');
   var hist=[],hi=0;
@@ -924,8 +1047,9 @@ volumes; degrades gracefully if one dies</pre>
     'ecoroute':'routes LLM calls by predicted quality, cost and data sensitivity\n-69.7% cost vs GPT-4o at -0.27 pt accuracy · 74 ms median decision\nhttps://github.com/waliddoesthis/ecoroute'
   };
   var cmds={
+    quest:function(){return '<span class="v">[!] MAIN QUEST</span>  LoRaWAN security research  <span class="ok">● in progress</span>\n  [x] accept the quest\n  [>] study the LoRaWAN security model (OTAA/ABP, keys, counters)\n  [>] survey known attacks on 1.0.x and 1.1\n  [ ] build a lab · test joins and replay protection · publish';},
     mail:function(){location.href='mailto:walidichchou711@gmail.com?subject=Hello%20Walid';return 'opening your mail app…'},
-    help:function(){return 'whoami  ls  cat &lt;file&gt;  mail  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
+    help:function(){return 'whoami  ls  cat &lt;file&gt;  quest  mail  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
     whoami:function(){return 'walid ichchou, security engineer who trains models'},
     ls:function(){return 'focus.txt  models  projects  experience  intigriti  ctf  contact  ids-blockchain  ecoroute  cv.pdf'},
     cat:function(a){var f=(a[0]||'').replace(/\.(txt|md)$/,'');return files[f]||('<span class="err">cat: '+esc(a[0]||'')+': No such file</span>')},
