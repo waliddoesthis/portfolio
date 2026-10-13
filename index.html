@@ -371,6 +371,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .qdone b{font-family:var(--f-display);font-stretch:80%;font-size:1.15rem;color:var(--fg)}
 .qdone small{font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
 
+.quest h3{font-size:clamp(2.6rem,8vw,5.2rem)!important}
+.quest-goal{margin-top:.8rem;font-size:.85rem;color:var(--sev-med);text-shadow:0 0 12px rgba(255,211,107,.5)}
+.dim-hud{color:var(--muted)}
+.finds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.find{position:relative;padding:.55rem .65rem;border:1px dashed rgba(255,211,107,.35);border-radius:5px;background:rgba(5,7,14,.55);overflow:hidden}
+.find .hud{font-size:.62rem;color:var(--sev-med)}
+.find i{display:block;height:.7rem;margin-top:.4rem;border-radius:2px;background:repeating-linear-gradient(90deg,var(--fg) 0 18px,transparent 18px 22px);opacity:.85}
+.find::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,211,107,.18) 50%,transparent 70%);background-size:250% 100%;background-position:100% 0}
+@media (prefers-reduced-motion:no-preference){.find::after{animation:shine 3.2s ease-in-out infinite}.find:nth-child(2n)::after{animation-delay:.6s}.find:nth-child(3n)::after{animation-delay:1.2s}}
+@keyframes shine{0%{background-position:100% 0}60%,100%{background-position:-50% 0}}
+.find.more{border-style:solid;border-color:rgba(177,140,255,.4)}
+.find.more .hud{color:var(--haze)}
+.find.more i{background:repeating-linear-gradient(90deg,var(--haze) 0 6px,transparent 6px 10px);opacity:.6}
+.lootbox{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+@media (max-width:860px){.lootbox{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.lootbox{grid-template-columns:1fr}}
+.item{--r:var(--muted);display:flex;align-items:center;gap:.75rem;padding:.7rem .8rem;border:1px solid var(--r);border-radius:6px;background:linear-gradient(135deg,color-mix(in srgb,var(--r) 16%,transparent),rgba(5,7,14,.6));box-shadow:inset 0 0 18px -8px var(--r);transition:transform .25s,box-shadow .25s;min-width:0}
+.item:hover{transform:translateY(-3px);box-shadow:inset 0 0 18px -8px var(--r),0 0 24px -6px var(--r)}
+.item .glyph{flex:none;display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:6px;background:rgba(5,7,14,.7);border:1px solid var(--r);font-size:1.25rem}
+.item b{display:block;font-family:var(--f-display);font-stretch:80%;font-weight:700;font-size:1.05rem;line-height:1.1;color:var(--fg)}
+.item small{display:block;font-size:.6rem;color:var(--r);margin-top:.2rem}
+.item.legendary{--r:#ffb347}
+.item.legendary .glyph{box-shadow:0 0 16px rgba(255,179,71,.6)}
+@media (prefers-reduced-motion:no-preference){.item.legendary{animation:pulseL 2.4s ease-in-out infinite}}
+@keyframes pulseL{50%{box-shadow:inset 0 0 18px -8px #ffb347,0 0 28px -6px rgba(255,179,71,.8)}}
+.item.epic{--r:#c084fc}
+.item.rare{--r:#60a5fa}
+.item.uncommon{--r:#4ade80}
+
 /* logos */
 .ico{width:1.05em;height:1.05em;fill:currentColor;flex:none;vertical-align:-.17em;transition:color .25s,filter .25s}
 .ico.brand{color:var(--c)}
@@ -433,8 +462,8 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
 <div class="page">
 <div class="ticker" role="note" aria-label="Status">
   <div class="ticker-track">
-    <span>Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
-    <span aria-hidden="true">Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
+    <span>Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
+    <span aria-hidden="true">Public // Portfolio // Ref WI-2026-01 <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> Open to a 6-month internship from March 2027 · France <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
   </div>
 </div>
 
@@ -553,11 +582,11 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
         </div>
         <div class="quest-grid">
           <div>
-            <h3>LoRaWAN security research</h3>
-            <div class="meta-row hud"><span>Class <b>Research</b></span><span>Zone <b>IoT · LPWAN · radio</b></span><span>Started <b>2026</b></span></div>
-            <p class="brief">Investigating the security of LoRaWAN, the long-range, low-power radio protocol behind smart meters, trackers and city sensors. The focus: how devices join the network, how session keys are derived and protected, and where real deployments leave gaps.</p>
+            <h3>LoRaWAN security</h3>
+            <div class="quest-goal hud">Goal · publish a research paper</div>
+            <p class="brief">Writing a research paper on the security of LoRaWAN, the long-range radio protocol connecting millions of IoT devices. The mission: uncover weaknesses nobody has documented yet, and show how to defend against them.</p>
             <div class="xp">
-              <div class="xp-top hud"><span>Quest progress</span><span>Exploring…</span></div>
+              <div class="xp-top hud"><span>Quest progress</span><span>Hunting…</span></div>
               <div class="xp-bar" aria-hidden="true"><span></span></div>
             </div>
             <canvas id="chirp" aria-label="Animated LoRa chirp spectrum"></canvas>
@@ -567,15 +596,28 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
             <div class="obj-head hud">Objectives</div>
             <ul class="objectives">
               <li class="done">Accept the quest</li>
-              <li class="active">Study the LoRaWAN security model: OTAA and ABP joins, root and session keys, frame counters</li>
-              <li class="active">Survey known attacks on LoRaWAN 1.0.x and 1.1</li>
-              <li class="locked">Build a lab: end device, gateway and network server</li>
-              <li class="locked">Test the join procedure and replay protection</li>
-              <li class="locked">Publish the write-up in Field notes</li>
+              <li class="active">Hunt for new findings in LoRaWAN</li>
+              <li class="locked">Publish the paper</li>
             </ul>
-            <div class="obj-head hud" style="margin-top:1.3rem">Loot</div>
-            <div class="loot hud"><span>+ IoT security</span><span>+ Radio / LPWAN</span><span>+ Protocol analysis</span><span>+ Applied crypto</span></div>
+            <div class="obj-head hud" style="margin-top:1.4rem">Discoveries <span class="dim-hud">· classified until publication</span></div>
+            <div class="finds" aria-label="Findings, hidden until the paper is published">
+              <div class="find"><span class="hud">Finding #01</span><i></i></div>
+              <div class="find"><span class="hud">Finding #02</span><i></i></div>
+              <div class="find"><span class="hud">Finding #03</span><i></i></div>
+              <div class="find"><span class="hud">Finding #04</span><i></i></div>
+              <div class="find"><span class="hud">Finding #05</span><i></i></div>
+              <div class="find more"><span class="hud">+ ???</span><i></i></div>
+            </div>
           </div>
+        </div>
+        <div class="obj-head hud" style="margin-top:1.8rem">Loot · rewards for clearing this quest</div>
+        <div class="lootbox">
+          <div class="item legendary"><span class="glyph" aria-hidden="true">📜</span><span><b>Published research paper</b><small class="hud">Legendary</small></span></div>
+          <div class="item epic"><span class="glyph" aria-hidden="true">🗝</span><span><b>New LoRaWAN attack paths</b><small class="hud">Epic</small></span></div>
+          <div class="item epic"><span class="glyph" aria-hidden="true">🛡</span><span><b>Defenses &amp; mitigations</b><small class="hud">Epic</small></span></div>
+          <div class="item rare"><span class="glyph" aria-hidden="true">📡</span><span><b>Radio &amp; LPWAN mastery</b><small class="hud">Rare</small></span></div>
+          <div class="item rare"><span class="glyph" aria-hidden="true">🔐</span><span><b>Applied crypto skills</b><small class="hud">Rare</small></span></div>
+          <div class="item uncommon"><span class="glyph" aria-hidden="true">⚡</span><span><b>IoT security XP</b><small class="hud">Uncommon</small></span></div>
         </div>
       </article>
       <div class="log-done">
@@ -1047,7 +1089,7 @@ volumes; degrades gracefully if one dies</pre>
     'ecoroute':'routes LLM calls by predicted quality, cost and data sensitivity\n-69.7% cost vs GPT-4o at -0.27 pt accuracy · 74 ms median decision\nhttps://github.com/waliddoesthis/ecoroute'
   };
   var cmds={
-    quest:function(){return '<span class="v">[!] MAIN QUEST</span>  LoRaWAN security research  <span class="ok">● in progress</span>\n  [x] accept the quest\n  [>] study the LoRaWAN security model (OTAA/ABP, keys, counters)\n  [>] survey known attacks on 1.0.x and 1.1\n  [ ] build a lab · test joins and replay protection · publish';},
+    quest:function(){return '<span class="v">[!] MAIN QUEST</span>  LoRaWAN security · research paper  <span class="ok">● in progress</span>\n  [x] accept the quest\n  [>] hunt for new findings in LoRaWAN\n  [ ] publish the paper\n<span class="dim">discoveries: classified until publication</span>\nloot: research paper (legendary) · new attack paths · defenses · LPWAN mastery';},
     mail:function(){location.href='mailto:walidichchou711@gmail.com?subject=Hello%20Walid';return 'opening your mail app…'},
     help:function(){return 'whoami  ls  cat &lt;file&gt;  quest  mail  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
     whoami:function(){return 'walid ichchou, security engineer who trains models'},
