@@ -839,38 +839,33 @@ volumes; degrades gracefully if one dies</pre>
             <div class="eng-head"><span class="tile"><svg class="ico" style="--c:#7c8cff" aria-hidden="true"><use href="#i-intigriti"/></svg></span><div><h3>Bug bounty &amp; offensive labs</h3>
             <div class="org">Independent researcher · Intigriti &amp; Hack The Box · <a href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener">dilawishere ↗</a></div></div></div>
             <ul>
-              <li>Large-scale programs on Intigriti: DHL, Monzo, Spacelift. Recon and mapping of exposed infrastructure.</li>
-              <li>Regular Hack The Box labs to keep exploitation skills sharp between programs.</li>
+              <li>Recon and mapping of exposed infrastructure on the DHL, Monzo and Spacelift programs.</li>
               <li>First validated vulnerability: <span class="redact" tabindex="0" title="Details withheld under the program's disclosure policy">details withheld under disclosure policy</span></li>
             </ul>
           </div>
           <div class="where">Remote</div>
         </li>
         <li>
-          <div class="when">Feb → Jun 2026<br><span class="tag">5 months</span></div>
+          <div class="when">Apr → Aug 2026<br><span class="tag">5 months</span></div>
           <div>
             <div class="eng-head"><span class="tile"><svg class="ico" style="--c:#F7931E" aria-hidden="true"><use href="#i-scikitlearn"/></svg></span><div><h3>Machine learning &amp; application security internship</h3>
             <div class="org">Panafi Maroc · final-year project (PFA)</div></div></div>
             <ul>
-              <li>Designed and built a secure internal web platform that detects anomalies in purchase invoices and stock movements from Excel and CSV imports, with prioritized, explained alerts.</li>
-              <li>Two layers: a rules engine for duplicate invoices, missing fields, invalid quantities and unjustified stock, then an unsupervised Isolation Forest on contextual features such as per-product price deviation, order size, adjustment frequency and supplier age.</li>
-              <li>Compared rules only, ML only and rules + ML at a constant review budget, on transactions after the training period to avoid temporal leakage, and reused manager feedback as labels.</li>
-              <li>Security by design: RBAC, server-side authorization, audit log, import validation, backup restore, and a security audit before delivery.</li>
-              <li class="stackline">Python · Pandas · scikit-learn · FastAPI · PostgreSQL · Docker</li>
+              <li>Built a secure internal web platform that detects anomalies in invoices and stock movements: a rules engine followed by an Isolation Forest, evaluated at a constant review budget.</li>
+              <li>Secured the application by design: RBAC, server-side authorization, audit log, import validation.</li>
+              <li class="stackline">scikit-learn · FastAPI · PostgreSQL · Docker</li>
             </ul>
           </div>
           <div class="where">Morocco</div>
         </li>
         <li>
-          <div class="when">Mar → Aug 2025<br><span class="tag">6 months</span></div>
+          <div class="when">Jun → Aug 2025<br><span class="tag">3 months</span></div>
           <div>
             <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/plutus-mark.png" alt="Plutus Solutions logo" loading="lazy"></span></span><div><h3>AI-assisted web &amp; API pentest internship</h3>
             <div class="org">Plutus Solutions</div></div></div>
             <ul>
-              <li>Penetration tests of web applications and REST APIs following PTES, OWASP Top 10 and OWASP API Top 10: IDOR, BOLA, authentication, injection, XSS and misconfigurations, with retests after fixes.</li>
-              <li>Built a Python and Bash pipeline that chains recon and scanning (Nmap, Nuclei, OWASP ZAP) and centralizes the results.</li>
-              <li>Integrated an LLM to triage findings (deduplication, prioritization, false-positive filtering) and suggest leads and payloads, every one validated by hand in Burp Suite.</li>
-              <li>Wrote structured reports with impact, proof and remediation for the development teams.</li>
+              <li>Ran penetration tests of web applications and REST APIs (PTES, OWASP Top 10, OWASP API Top 10) and wrote the reports.</li>
+              <li>Automated Nmap, Nuclei and OWASP ZAP in Python and Bash, with LLM triage of the results validated in Burp Suite.</li>
             </ul>
           </div>
           <div class="where">Mohammedia, MA</div>
@@ -878,18 +873,17 @@ volumes; degrades gracefully if one dies</pre>
         <li>
           <div class="when">2026 → 2027</div>
           <div>
-            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/isima-mark.png" alt="ISIMA logo" loading="lazy"></span></span><div><h3>MSc Computer Science, ICS track</h3>
+            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/isima-mark.png" alt="ISIMA logo" loading="lazy"></span></span><div><h3>Master 2 Computer Science, International Computer Science (ICS)</h3>
             <div class="org">ISIMA · Clermont Auvergne INP · double degree</div></div></div>
-            <ul><li>Advanced machine learning, data mining, learning under uncertainty, HPC. Taught entirely in English.</li></ul>
+            <ul><li>Taught entirely in English.</li></ul>
           </div>
           <div class="where">Clermont-Ferrand, FR</div>
         </li>
         <li>
           <div class="when">2022 → 2027</div>
           <div>
-            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/ensam-mark.png" alt="ENSAM Casablanca logo" loading="lazy"></span></span><div><h3>Engineering degree, Cybersecurity &amp; Cloud</h3>
+            <div class="eng-head"><span class="tile"><span class="plate"><img src="assets/logos/ensam-mark.png" alt="ENSAM Casablanca logo" loading="lazy"></span></span><div><h3>Engineering degree, Cybersecurity &amp; Cloud Computing</h3>
             <div class="org">ENSAM Casablanca · Université Hassan II</div></div></div>
-            <ul><li>Network and information-system security, artificial intelligence, cloud and DevOps.</li></ul>
           </div>
           <div class="where">Casablanca, MA</div>
         </li>
@@ -1105,7 +1099,7 @@ volumes; degrades gracefully if one dies</pre>
     'focus':'offense   web & API pentest (PTES, OWASP), bug bounty\ndefense   deep-learning intrusion detection, SIEM + ML pipelines\nai        PyTorch, attention models, LLM routing, imbalance handling\nplatform  AWS serverless, Docker, Kafka, Spark, Linux',
     'projects':'CF-01  ids-blockchain   CNN-BiLSTM IDS + MultiChain audit log   macro-F1 0.7711\nCF-02  ecoroute         LLM gateway by quality, cost, sensitivity  -69.7% cost\nCF-03  siem-aws         Wazuh → Lambda ML scoring → S3\nCF-04  firewall.py      stateful filtering, structured logs\nCF-05  anomaly-logs     clustering vs false positives\n<span class="dim">open one: cat ids-blockchain · cat ecoroute</span>',
     'models':'<span class="v">MC-01</span>  flow classifier   Conv1d → BiLSTM → attention · 0.98M params\n       16.2M flows · 15 classes · macro-F1 0.7711 · benign recall 98.6%\n<span class="v">MC-02</span>  ecoroute router   graph model → calibrated P(correct)\n       -69.7% cost vs GPT-4o · -0.27 pt accuracy · 74 ms median\n<span class="dim">train --explain for the lesson I learned the hard way</span>',
-    'experience':'2026-     Intigriti / HTB  bug bounty · DHL, Monzo, Spacelift + labs\n2026      Panafi Maroc     ML & appsec internship · invoice/stock anomaly detection\n2025      Plutus Solutions AI-assisted web & API pentest (PTES, OWASP, LLM triage)\n2026-27   ISIMA            MSc ICS (ML, decision science), double degree\n2022-27   ENSAM Casablanca engineering, cybersecurity & cloud',
+    'experience':'2026-      Intigriti / HTB  bug bounty & offensive labs · DHL, Monzo, Spacelift\nApr-Aug 26 Panafi Maroc     ML & appsec internship · invoice/stock anomaly detection\nJun-Aug 25 Plutus           AI-assisted web & API pentest (PTES, OWASP, LLM triage)\n2026-27    ISIMA            Master 2 CS, ICS track, double degree\n2022-27    ENSAM            engineering degree, cybersecurity & cloud computing',
     'ctf':'<span class="ok">[+]</span> SecureIT CTF 2025 · Cisco NetAcad · 2nd, Africa & Middle East\n<span class="ok">[+]</span> ENSAM project competition 2026 · 1st',
     'intigriti':'researcher  dilawishere\nprograms    DHL · Monzo · Spacelift\nstatus      first finding validated\n<a href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener">app.intigriti.com/researcher/profile/dilawishere</a>',
     'contact':'email     walidichchou711@gmail.com\nlinkedin  linkedin.com/in/walid-ichchou-64b08a332\nintigriti dilawishere\ngithub    github.com/waliddoesthis',
