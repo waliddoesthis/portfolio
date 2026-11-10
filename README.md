@@ -3,8 +3,8 @@
 Static site: `index.html` + `assets/`. No build step, no framework, no trackers.
 
 ## Edit
-- All text lives in `index.html`. Projects are the `<article class="case">` blocks, experience is the `<ol class="log">` list.
-- Shell commands are in the `cmds` / `files` objects in the `<script>` at the bottom.
+- All text lives in `index.html`. Selected work is the `<article class="card cs">` blocks, experience is the first `<ol class="tl">` list, the playground demos and shell live in the `<script>` at the bottom.
+- Shell commands are in the `cmds` / `files` objects; the mini ThreatLens corpus is `DOCS`.
 - Swap the photo at `assets/walid.jpg` and the CV at `assets/cv-walid-ichchou.pdf`.
 
 ## Deploy (free) and point a .dev domain
