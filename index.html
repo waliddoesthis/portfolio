@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!--HEAD-START-->
 <title>Walid Ichchou</title>
-<meta name="description" content="Walid Ichchou, final-year engineering student in cybersecurity and AI, seeking a 6-month end-of-studies internship from March 2027 in AI, machine learning or cybersecurity.">
-<meta property="og:title" content="Walid Ichchou | AI · ML · Cybersecurity · Internship from March 2027">
-<meta property="og:description" content="Seeking a 6-month internship from March 2027. ML for security, AI-assisted pentesting, secure software. Two internships, 1st prize IDS project.">
+<meta name="description" content="Walid Ichchou builds machine learning systems for security: ThreatLens, a cited RAG copilot for SOC analysts, a deep-learning intrusion detection platform and an LLM gateway. Open to a 6-month internship from March 2027.">
+<meta property="og:title" content="Walid Ichchou | Machine learning for security">
+<meta property="og:description" content="ML for security, measured honestly. ThreatLens RAG copilot for SOC & CTI, 1st-prize intrusion detection platform, AI-assisted pentesting. Open to a 6-month internship from March 2027.">
 <link rel="canonical" href="https://walidichchou.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://walidichchou.dev/">
@@ -182,32 +182,51 @@ section.part{padding-block:clamp(3rem,7vw,5.5rem);border-top:1px solid var(--lin
 .part-head p{grid-column:2;margin:.6rem 0 0;color:var(--muted);max-width:42em}
 @media (max-width:640px){.part-head{grid-template-columns:1fr}.part-head p{grid-column:1}}
 
-/* summary of findings */
-.findings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-.finding{padding:1.1rem 1rem 1.2rem;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:6px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.finding .v{font-family:var(--f-display);font-weight:800;font-stretch:70%;font-size:2.6rem;line-height:1;font-variant-numeric:tabular-nums;background:linear-gradient(180deg,var(--fg),var(--signal));-webkit-background-clip:text;background-clip:text;color:transparent}
-.finding p{margin:.5rem 0 0;font-size:.92rem;color:var(--muted);line-height:1.45}
-@media (max-width:820px){.findings{grid-template-columns:1fr 1fr}}
-.summary-text{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1rem;margin-top:2rem}
-.summary-text p{margin:0;max-width:42em}
-.summary-text p+p{margin-top:1em}
-@media (max-width:640px){.summary-text{grid-template-columns:1fr}}
+/* hero proof + shell hint */
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:2.2rem 0 0;padding-top:1.3rem;border-top:1px solid var(--line)}
+.proof div{min-width:0}
+.proof dt{font-family:var(--f-display);font-weight:800;font-stretch:72%;font-size:1.7rem;line-height:1;color:var(--fg);font-variant-numeric:tabular-nums}
+.proof div:first-child dt{color:var(--signal)}
+.proof dd{margin:.35rem 0 0;font-family:var(--f-mono);font-size:.68rem;line-height:1.45;color:var(--muted)}
+@media (max-width:640px){.proof{grid-template-columns:1fr 1fr}}
+.shell-hint{margin:1.4rem 0 0;font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.shell-hint kbd{font-family:inherit;border:1px solid var(--line-strong);border-radius:3px;padding:0 .3rem;color:var(--fg)}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--signal);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media (pointer:coarse){.shell-hint kbd,.shell-hint .kb{display:none}}
+.shell:not(.float){display:none}
 
-/* recruiter brief */
-html{scroll-padding-top:4.5rem}
-.brief{padding-top:.5rem}
-.brief-card{padding:clamp(1.2rem,3vw,1.8rem);background:var(--panel);border:1px solid var(--line-strong);border-radius:10px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:inset 0 2px 0 var(--signal)}
-.brief-top{display:flex;justify-content:space-between;gap:.6rem 1rem;flex-wrap:wrap;align-items:center}
-.brief-ask{font-family:var(--f-display);font-stretch:80%;font-weight:700;font-size:var(--step-2);line-height:1.2;margin:1rem 0 1.6rem;max-width:36em;text-wrap:balance}
-.brief-ask b{color:var(--signal)}
-.brief-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem 2rem}
-.brief-grid h3{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--haze);font-weight:600;margin-bottom:.4rem}
-.brief-grid ul{margin:0;padding-left:1.1rem}
-.brief-grid li{margin-top:.45rem;font-size:.95rem;line-height:1.45}
-.brief-grid li::marker{color:var(--signal)}
-.brief-grid li small{display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.brief .cta{margin-top:1.6rem}
-@media (max-width:860px){.brief-grid{grid-template-columns:1fr}}
+/* selected work */
+.work{border-top:0}
+.case.flagship{border-color:rgba(110,231,255,.35);box-shadow:inset 0 2px 0 var(--signal),0 30px 80px -40px rgba(110,231,255,.45)}
+.case .kicker{font-family:var(--f-mono);font-size:.85rem;color:var(--signal)}
+.case .links{flex-wrap:wrap}
+.live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:.45rem;vertical-align:1px;box-shadow:0 0 0 0 rgba(95,240,176,.6)}
+@media (prefers-reduced-motion:no-preference){.live{animation:live 2s ease-out infinite}}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(95,240,176,.55)}100%{box-shadow:0 0 0 9px rgba(95,240,176,0)}}
+.tl-demo{align-self:start;display:flex;flex-direction:column;gap:1rem;font-family:var(--f-mono);font-size:.74rem;background:rgba(5,7,14,.6);border:1px solid var(--line);border-radius:8px;padding:1rem}
+.hud-k{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.tl-q{padding:.75rem .8rem;border:1px solid var(--line-strong);border-radius:6px;background:rgba(110,231,255,.04);color:var(--fg);line-height:1.5;word-break:break-word}
+.tl-steps{list-style:none;margin:0;padding:0 0 0 .2rem;display:flex;flex-direction:column;gap:.15rem;counter-reset:st}
+.tl-steps li{position:relative;padding:.35rem 0 .35rem 1.6rem;counter-increment:st;display:flex;flex-wrap:wrap;gap:.1rem .6rem;align-items:baseline}
+.tl-steps li::before{content:counter(st);position:absolute;left:0;top:.38rem;width:1.05rem;height:1.05rem;border-radius:50%;border:1px solid var(--signal);color:var(--signal);font-size:.6rem;display:grid;place-items:center}
+.tl-steps li+li::after{content:"";position:absolute;left:.5rem;top:-.3rem;height:.6rem;border-left:1px dashed var(--line-strong)}
+.tl-steps b{color:var(--fg);font-weight:600}
+.tl-steps span{color:var(--muted)}
+.tl-src{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.tl-src .hud-k{width:100%}
+.cite{padding:.12rem .45rem;border-radius:3px;background:rgba(177,140,255,.1);border:1px solid rgba(177,140,255,.35);color:var(--haze);font-size:.68rem}
+.tl-next{margin:0;padding-top:.8rem;border-top:1px dashed var(--line);color:var(--muted);line-height:1.5}
+.tl-next b{color:var(--ok);font-weight:600;margin-right:.4rem}
+.evidence.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:520px){.evidence.four{grid-template-columns:1fr 1fr}}
+.tl-fmt{width:100%;margin-top:.2rem;color:var(--muted);font-size:.66rem}
+.cases.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:980px){.cases.three{grid-template-columns:1fr}}
+.sidequest{display:flex;flex-direction:column;gap:.25rem;margin-top:1.25rem;padding:.9rem 1rem;border:1px solid rgba(95,240,176,.35);border-radius:8px;background:var(--panel);text-decoration:none;transition:border-color .25s,transform .25s}
+.sidequest:hover{border-color:var(--ok);transform:translateY(-2px)}
+.sidequest .hud{font-size:.62rem;color:var(--ok)}
+.sidequest b{font-family:var(--f-display);font-stretch:80%;font-size:1.25rem;color:var(--fg)}
+.sidequest small{font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
 
 /* engagements log */
 .log{list-style:none;margin:0;padding:0}
@@ -484,8 +503,8 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
 <div class="page">
 <div class="ticker" role="note" aria-label="Status">
   <div class="ticker-track">
-    <span>Seeking a 6-month end-of-studies internship from March 2027 <b>◆</b> AI · Machine learning · Cybersecurity <b>◆</b> Anywhere in France · FR / EN <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
-    <span aria-hidden="true">Seeking a 6-month end-of-studies internship from March 2027 <b>◆</b> AI · Machine learning · Cybersecurity <b>◆</b> Anywhere in France · FR / EN <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> IDS macro-F1 0.7711 on 15 classes <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b></span>
+    <span>Now building: ThreatLens, a cited RAG copilot for SOC &amp; CTI analysts <b>◆</b> AI · Machine learning · Cybersecurity <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> 1st place · ENSAM project competition 2026 <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b> Open to a 6-month internship from March 2027 <b>◆</b></span>
+    <span aria-hidden="true">Now building: ThreatLens, a cited RAG copilot for SOC &amp; CTI analysts <b>◆</b> AI · Machine learning · Cybersecurity <b>◆</b> Main quest: LoRaWAN security research paper <b>◆</b> 1st place · ENSAM project competition 2026 <b>◆</b> SecureIT CTF 2025 · 2nd Africa &amp; Middle East <b>◆</b> EcoRoute · −69.7% LLM cost <b>◆</b> Intigriti · dilawishere <b>◆</b> Open to a 6-month internship from March 2027 <b>◆</b></span>
   </div>
 </div>
 
@@ -493,10 +512,10 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
   <div class="wrap">
     <a class="prompt" href="#top"><b>walid</b>@ichchou:~$<i aria-hidden="true"></i></a>
     <ul>
-      <li><a href="#brief" data-scramble>Hiring</a></li>
+      <li><a href="#work" data-scramble>Work</a></li>
       <li><a href="#experience" data-scramble>Experience</a></li>
-      <li><a href="#quest" data-scramble>Quest</a></li>
       <li><a href="#lab" data-scramble>AI lab</a></li>
+      <li><a href="#quest" data-scramble>Quest</a></li>
       <li><a href="#cases" data-scramble>Projects</a></li>
       <li><a href="#recognition" data-scramble>Recognition</a></li>
       <li><a href="#toolkit" data-scramble>Toolkit</a></li>
@@ -504,7 +523,7 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
     </ul>
     <span class="socials"><a href="https://github.com/waliddoesthis" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" style="--c:#e7eaf6" aria-hidden="true"><use href="#i-github"/></svg></a><a href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener" aria-label="Intigriti"><svg class="ico" style="--c:#7c8cff" aria-hidden="true"><use href="#i-intigriti"/></svg></a><a href="https://www.linkedin.com/in/walid-ichchou-64b08a332" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" style="--c:#0a66c2" aria-hidden="true"><use href="#i-linkedin"/></svg></a></span>
     <a class="btn cvbtn" href="assets/cv-walid-ichchou.pdf" download="Walid-Ichchou-CV.pdf" aria-label="Download CV (PDF)"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> CV</a>
-    <a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Internship%20from%20March%202027">Contact me</a>
+    <a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Hello%20Walid">Contact me</a>
     <button class="btn" id="open-shell" type="button" title="Open the shell (press `)">Shell <kbd>`</kbd></button>
   </div>
 </nav>
@@ -515,39 +534,27 @@ a:hover .ico,.lw-item:hover .ico,.tile:hover .ico,.chip-i:hover .ico{color:var(-
       <div><dt class="label">Name</dt><dd>Walid Ichchou</dd></div>
       <div><dt class="label">Focus</dt><dd>AI · ML · Cybersecurity</dd></div>
       <div><dt class="label">Based in</dt><dd>Clermont-Ferrand · mobile in France</dd></div>
-      <div><dt class="label">Status</dt><dd><span class="tag ok">Internship from Mar 2027</span></dd></div>
+      <div><dt class="label">Open to</dt><dd><span class="tag ok">Internship · Mar 2027</span></dd></div>
     </dl>
 
     <div class="hero">
       <div>
         <h1 class="name reveal-name"><span class="first">Walid</span><span class="last" data-text="Ichchou">Ichchou</span></h1>
-        <p class="role">// AI &amp; machine learning · cybersecurity · <b>looking for a 6-month internship from March 2027</b></p>
-        <p class="lede">I build machine learning systems for security and test applications for the attacks they should stop. Final-year engineering student in cybersecurity and cloud computing at ENSAM Casablanca, in a double degree (Master 2 Computer Science) at ISIMA, Clermont-Ferrand. Two internships behind me, one in ML and application security, one in AI-assisted pentesting. <em>Bug bounty hunter on Intigriti.</em></p>
+        <p class="role">// machine learning for security · <b>offense, defense and the models in between</b></p>
+        <p class="lede">I build machine learning systems for security, then test them the way an attacker would. Right now that means <a href="#work">ThreatLens</a>, a copilot that answers SOC questions with cited sources, and a research paper on LoRaWAN security. Engineering student in cybersecurity and cloud at ENSAM Casablanca, finishing a double degree at ISIMA in Clermont-Ferrand. <em>Bug bounty hunter on Intigriti.</em></p>
         <div class="cta">
-          <a class="primary" href="mailto:walidichchou711@gmail.com?subject=Internship%20from%20March%202027">Email me about an internship</a>
+          <a class="primary" href="#work">See my work</a>
           <a href="assets/cv-walid-ichchou.pdf" download="Walid-Ichchou-CV.pdf">Download CV</a>
-          <a href="#experience">Experience</a>
-          <a href="#cases">Projects</a>
+          <a href="#contact">Get in touch</a>
           <a href="https://github.com/waliddoesthis" target="_blank" rel="noopener"><svg class="ico" style="--c:#e7eaf6" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
-          <a href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener"><svg class="ico" style="--c:#7c8cff" aria-hidden="true"><use href="#i-intigriti"/></svg> Intigriti</a>
         </div>
-
-        <div class="shell" id="shell" aria-label="Interactive shell">
-          <div class="shell-bar"><span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>tty1 · walid@ichchou</span><span>type <b>help</b></span></div>
-          <div class="shell-out" id="shell-out" aria-live="polite"><span class="p">walid@ichchou:~$</span> whoami
-walid ichchou, security engineer who trains models
-<span class="p">walid@ichchou:~$</span> cat focus.txt
-offense   web &amp; API pentest (PTES, OWASP), bug bounty
-defense   deep-learning intrusion detection, SIEM + ML pipelines
-ai        PyTorch, attention models, LLM routing, imbalance handling
-platform  AWS serverless, Docker, Kafka, Spark, Linux
-<span class="dim">try: internship · experience · models · projects · sudo hire walid</span>
-</div>
-          <form class="shell-in" id="shell-form" autocomplete="off">
-            <label for="shell-input">walid@ichchou:~$</label>
-            <input id="shell-input" type="text" spellcheck="false" aria-label="Shell command">
-          </form>
-        </div>
+        <dl class="proof">
+          <div><dt>1st place</dt><dd>ENSAM project competition 2026, AI intrusion detection</dd></div>
+          <div><dt>2nd</dt><dd>SecureIT CTF 2025, Africa &amp; Middle East</dd></div>
+          <div><dt>0.936</dt><dd>Recall@10 for ThreatLens retrieval on 117 SOC questions</dd></div>
+          <div><dt>−69.7%</dt><dd>LLM cost cut by EcoRoute at near GPT-4o accuracy</dd></div>
+        </dl>
+        <p class="shell-hint">Prefer a terminal? <span class="kb">Press <kbd>`</kbd> anywhere, or </span><button type="button" class="linkbtn" data-open-shell>open the shell</button>.</p>
       </div>
 
       <div class="badge-wrap">
@@ -569,43 +576,69 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
     </div>
   </header>
 
-  <section class="brief wrap" id="brief" aria-label="For recruiters">
-    <div class="brief-card">
-      <div class="brief-top"><span class="label">For recruiters · the short version</span><span class="tag ok">Available March 2027 · 6 months</span></div>
-      <p class="brief-ask">I am looking for a <b>6-month end-of-studies internship</b> (stage de fin d&rsquo;études) starting <b>March 2027</b>, in <b>AI, machine learning or cybersecurity</b>.</p>
-      <div class="brief-grid">
-        <div>
-          <h3>What I&rsquo;m looking for</h3>
-          <ul>
-            <li>Final-year internship (PFE), March to August 2027</li>
-            <li>ML / AI engineering, AI security, detection engineering, pentest or application security</li>
-            <li>Anywhere in France, based in Clermont-Ferrand</li>
-            <li>Working in French or English (both C1)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>What I can do</h3>
-          <ul>
-            <li>Train and evaluate ML models end to end, from 16M-flow datasets to an inference API <small>PyTorch · scikit-learn · Spark</small></li>
-            <li>Pentest web apps and REST APIs, automate scanners, write client reports <small>PTES · OWASP Top 10 · Burp · Nuclei</small></li>
-            <li>Build secure software with access control and audit logging by design <small>FastAPI · PostgreSQL · Docker</small></li>
-            <li>Put LLMs to work: agents, routing, PII detection <small>Python · LLM agents</small></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Experience so far</h3>
-          <ul>
-            <li><b>ML &amp; application security intern</b>, Panafi Maroc <small>Apr – Aug 2026 · anomaly detection app</small></li>
-            <li><b>AI-assisted pentest intern</b>, Plutus Solutions <small>Mar – Aug 2025 · web &amp; API pentests</small></li>
-            <li><b>1st prize</b>, ENSAM project competition <small>2026 · deep-learning IDS, 91.6% accuracy</small></li>
-            <li><b>2nd place</b>, SecureIT CTF Africa &amp; Middle East <small>2025 · Cisco Networking Academy</small></li>
-          </ul>
-        </div>
+  <section class="part work" id="work">
+    <div class="wrap">
+      <div class="part-head">
+        <span class="num">§1</span>
+        <h2 data-scramble>Selected work</h2>
+        <p>Three projects I would walk you through first. Each one is public, measured, and honest about where it falls short.</p>
       </div>
-      <div class="cta">
-        <a class="primary" href="mailto:walidichchou711@gmail.com?subject=Internship%20from%20March%202027">Email me about an internship</a>
-        <a href="assets/cv-walid-ichchou.pdf" download="Walid-Ichchou-CV.pdf">Download CV (PDF)</a>
-        <a href="#experience">See experience</a>
+      <div class="cases">
+        <article class="case lead flagship spot">
+          <div style="display:flex;flex-direction:column;gap:.9rem;min-width:0">
+            <div class="case-id"><span class="label">W-01 · Oct 2026 → now · solo</span><span class="tag ok"><i class="live" aria-hidden="true"></i>In progress · new</span></div>
+            <h3>ThreatLens</h3>
+            <p class="kicker">A RAG copilot for SOC &amp; CTI analysts.</p>
+            <p>Paste an alert, a log line or a CVE and get an answer where every claim points to its source in MITRE ATT&amp;CK, CISA KEV, NVD, CERT-FR or SigmaHQ. Hybrid retrieval, cross-encoder reranking and local LLMs, with a 117-question benchmark to keep it honest.</p>
+            <dl class="evidence four">
+              <div><dt>Recall@10</dt><dd>0.936</dd></div>
+              <div><dt>Faithfulness</dt><dd>0.875</dd></div>
+              <div><dt>Valid citations</dt><dd>97.4%</dd></div>
+              <div><dt>Corpus</dt><dd>5,718 docs</dd></div>
+            </dl>
+            <ul class="stack"><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>Qdrant</li><li>BM25 + bge-small</li><li>Cross-encoder</li><li>Ollama · Llama 3.1 8B</li><li>Docker Compose</li></ul>
+            <div class="links"><a href="https://github.com/waliddoesthis/threatlens" target="_blank" rel="noopener">Repository ↗</a><a href="#mc-threatlens">Evaluation details ↓</a></div>
+          </div>
+          <div class="tl-demo" aria-label="How a question flows through ThreatLens">
+            <div class="tl-q"><span class="hud-k">analyst</span>winword.exe spawned powershell.exe -enc JABzAD0A… what is this and how do I detect it?</div>
+            <ol class="tl-steps">
+              <li><b>guard</b><span>screen the query</span></li>
+              <li><b>hybrid retrieval</b><span>BM25 + dense, fused with RRF</span></li>
+              <li><b>rerank</b><span>cross-encoder, fused with the hybrid order</span></li>
+              <li><b>sanitise · route</b><span>small local model or larger one</span></li>
+              <li><b>cited answer</b><span>every claim tagged with its source id</span></li>
+            </ol>
+            <div class="tl-src"><span class="hud-k">sources it can cite</span><span class="cite">ATT&amp;CK</span><span class="cite">CISA KEV</span><span class="cite">NVD</span><span class="cite">CERT-FR</span><span class="cite">SigmaHQ</span><span class="tl-fmt">cited as [attack:T1059.001]</span></div>
+            <p class="tl-next"><b>Next up</b> a cost-aware model router, a prompt-injection attack and defence benchmark, and a live cloud deployment.</p>
+          </div>
+        </article>
+
+        <article class="case spot">
+          <div class="case-id"><span class="label">W-02 · May 2026 · team of 4</span><span class="tag ok">1st place, ENSAM competition</span></div>
+          <h3>IDS-Blockchain</h3>
+          <p>Real-time network intrusion detection. My deep-learning flow classifier scores live traffic, and high-severity alerts are hashed into a private MultiChain ledger, so the alert history cannot be quietly rewritten.</p>
+          <p class="mono" style="font-size:.78rem;color:var(--muted)">My part: preprocessing, model training, evaluation and the inference API.</p>
+          <dl class="evidence">
+            <div><dt>Flows</dt><dd>16.2M</dd></div>
+            <div><dt>Macro-F1</dt><dd>0.7711</dd></div>
+            <div><dt>Accuracy</dt><dd>91.6%</dd></div>
+          </dl>
+          <ul class="stack"><li>PyTorch</li><li>Spark</li><li>Kafka (KRaft)</li><li>MultiChain</li><li>Streamlit</li><li>Docker Compose</li></ul>
+          <div class="links"><a href="https://github.com/waliddoesthis/Ids-Blockchain" target="_blank" rel="noopener">Repository ↗</a><a href="#lab">Model card ↓</a></div>
+        </article>
+
+        <article class="case spot">
+          <div class="case-id"><span class="label">W-03 · Sept 2026</span><span class="tag ai">AI security · research prototype</span></div>
+          <h3>EcoRoute</h3>
+          <p>An LLM gateway that routes each request by predicted answer quality, cost and data sensitivity. Confidential prompts never reach a model without the clearance for them.</p>
+          <dl class="evidence">
+            <div><dt>Cost saved</dt><dd>69.7%</dd></div>
+            <div><dt>Accuracy Δ</dt><dd>−0.27 pt</dd></div>
+            <div><dt>Decision</dt><dd>74 ms</dd></div>
+          </dl>
+          <ul class="stack"><li>Python</li><li>PyTorch</li><li>Graph model</li><li>PII detection</li><li>OpenAI-compatible API</li></ul>
+          <div class="links"><a href="https://github.com/waliddoesthis/ecoroute" target="_blank" rel="noopener">Repository ↗</a><a href="#lab">Model card ↓</a></div>
+        </article>
       </div>
     </div>
   </section>
@@ -633,7 +666,7 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
   <section class="part" id="experience">
     <div class="wrap">
       <div class="part-head">
-        <span class="num">§1</span>
+        <span class="num">§2</span>
         <h2 data-scramble>Experience</h2>
         <p>Internships first, then independent security research. Education below.</p>
       </div>
@@ -700,107 +733,21 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
     </div>
   </section>
 
-  <!-- MAIN QUEST: to start a new quest, edit the title, briefing, objectives and loot below,
-       and move the old one into "Completed quests". Objective states: done | active | locked. -->
-  <section class="part" id="quest">
-    <div class="wrap">
-      <div class="part-head">
-        <span class="num">§2</span>
-        <h2 data-scramble>Main quest</h2>
-        <p>What I am working on right now. Every new project becomes the active quest.</p>
-      </div>
-      <article class="quest">
-        <div class="quest-top">
-          <span class="quest-flag hud"><span class="bang" aria-hidden="true">!</span>Main quest · active</span>
-          <span class="quest-status hud"><i aria-hidden="true"></i>In progress</span>
-        </div>
-        <div class="quest-grid">
-          <div>
-            <h3>LoRaWAN security</h3>
-            <div class="quest-goal hud">Goal · publish a research paper</div>
-            <p class="brief">Writing a research paper on the security of LoRaWAN, the long-range radio protocol connecting millions of IoT devices. The mission: uncover weaknesses nobody has documented yet, and show how to defend against them.</p>
-            <div class="xp">
-              <div class="xp-top hud"><span>Quest progress</span><span>Hunting…</span></div>
-              <div class="xp-bar" aria-hidden="true"><span></span></div>
-            </div>
-            <canvas id="chirp" aria-label="Animated LoRa chirp spectrum"></canvas>
-            <div class="chirp-cap hud">LoRa chirp spread spectrum · illustration</div>
-          </div>
-          <div>
-            <div class="obj-head hud">Objectives</div>
-            <ul class="objectives">
-              <li class="done">Accept the quest</li>
-              <li class="active">Hunt for new findings in LoRaWAN</li>
-              <li class="locked">Publish the paper</li>
-            </ul>
-            <div class="obj-head hud" style="margin-top:1.4rem">Discoveries <span class="dim-hud">· classified until publication</span></div>
-            <div class="finds" aria-label="Findings, hidden until the paper is published">
-              <div class="find"><span class="hud">Finding #01</span><i></i></div>
-              <div class="find"><span class="hud">Finding #02</span><i></i></div>
-              <div class="find"><span class="hud">Finding #03</span><i></i></div>
-              <div class="find"><span class="hud">Finding #04</span><i></i></div>
-              <div class="find"><span class="hud">Finding #05</span><i></i></div>
-              <div class="find more"><span class="hud">+ ???</span><i></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="obj-head hud" style="margin-top:1.8rem">Loot · rewards for clearing this quest</div>
-        <div class="lootbox">
-          <div class="item legendary"><span class="glyph" aria-hidden="true">📜</span><span><b>Published research paper</b><small class="hud">Legendary</small></span></div>
-          <div class="item epic"><span class="glyph" aria-hidden="true">🗝</span><span><b>New LoRaWAN attack paths</b><small class="hud">Epic</small></span></div>
-          <div class="item epic"><span class="glyph" aria-hidden="true">🛡</span><span><b>Defenses &amp; mitigations</b><small class="hud">Epic</small></span></div>
-          <div class="item rare"><span class="glyph" aria-hidden="true">📡</span><span><b>Radio &amp; LPWAN mastery</b><small class="hud">Rare</small></span></div>
-          <div class="item rare"><span class="glyph" aria-hidden="true">🔐</span><span><b>Applied crypto skills</b><small class="hud">Rare</small></span></div>
-          <div class="item uncommon"><span class="glyph" aria-hidden="true">⚡</span><span><b>IoT security XP</b><small class="hud">Uncommon</small></span></div>
-        </div>
-      </article>
-      <div class="log-done">
-        <span class="hud">Completed quests</span>
-        <div class="qdone">
-          <a href="#cases"><span class="hud">✓ Cleared 2026 · 1st place</span><b>IDS-Blockchain</b><small>Deep-learning IDS on 16.2M flows</small></a>
-          <a href="#cases"><span class="hud">✓ Cleared 2026</span><b>EcoRoute</b><small>LLM routing, −69.7% cost</small></a>
-          <a href="#recognition"><span class="hud">✓ Cleared 2025 · 2nd place</span><b>SecureIT CTF</b><small>Africa &amp; Middle East final</small></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="part" id="summary">
-    <div class="wrap">
-      <div class="part-head">
-        <span class="num">§3</span>
-        <h2 data-scramble>Summary of findings</h2>
-      </div>
-      <div class="findings">
-        <div class="finding spot"><div class="v">2nd</div><p>Africa &amp; Middle East, SecureIT CTF by Cisco Networking Academy (2025)</p></div>
-        <div class="finding spot"><div class="v">16.2M</div><p>network flows behind the intrusion detection model I trained</p></div>
-        <div class="finding spot"><div class="v">0.77</div><p>macro-F1 across 15 traffic classes on CSE-CIC-IDS2018</p></div>
-        <div class="finding spot"><div class="v">69.7%</div><p>LLM cost cut by EcoRoute vs always calling GPT-4o, within 0.3 points of accuracy</p></div>
-      </div>
-      <div class="summary-text">
-        <span class="label">Assessment</span>
-        <div>
-          <p>The subject works on both sides of the wire and brings machine learning to each. Offense: PTES and OWASP audits of web applications and APIs, scanner automation with LLM agents, bug bounty research on Intigriti. Defense: a deep-learning intrusion detection platform, an anomaly detection application secured with RBAC and audit logging, ML scoring of SIEM alerts in AWS Lambda, and an LLM gateway that keeps confidential data away from models not cleared for it.</p>
-          <p>Recommendation: a strong fit for a 6-month internship from March 2027 in machine learning, AI security, detection engineering or application security. Comfortable writing the report, not only finding the bug.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="part" id="lab">
     <div class="wrap">
       <div class="part-head">
-        <span class="num">§4</span>
+        <span class="num">§3</span>
         <h2 data-scramble>AI lab</h2>
         <p>Machine learning applied to security problems. Each model is written up as a model card: what it does, what it was trained on, how it scored, and where it falls short.</p>
       </div>
 
       <div class="lab-intro">
-        <p>Most of my ML work starts from a security question. Which flow is an attack? Which alert deserves a human? Which LLM is allowed to see this prompt? I care as much about class imbalance, calibration and honest evaluation as about the architecture.</p>
+        <p>Most of my ML work starts from a security question. Which flow is an attack? Which alert deserves a human? Which LLM is allowed to see this prompt? Which source actually answers the analyst? I care as much about class imbalance, calibration and honest evaluation as about the architecture.</p>
         <ul>
           <li>Deep learning <b>CNN · BiLSTM · attention</b></li>
           <li>Imbalance <b>logit adjustment · focal loss</b></li>
           <li>Routing <b>graph model · calibration</b></li>
+          <li>Retrieval <b>hybrid search · reranking · RAG eval</b></li>
           <li>Unsupervised <b>clustering · anomalies</b></li>
           <li>Coursework <b>ML &amp; data mining · HPC</b></li>
         </ul>
@@ -867,6 +814,41 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
         </div>
       </article>
 
+      <article class="modelcard spot" id="mc-threatlens">
+        <div>
+          <div class="case-id"><span class="label">Model card · MC-03 · <svg class="ico brand" style="--c:#5a9fd4" aria-hidden="true"><use href="#i-python"/></svg> Python</span><span class="tag ai">RAG · evaluation</span></div>
+          <h3>ThreatLens retrieval</h3>
+          <div class="sub">BM25 + bge-small-en-v1.5 · RRF · cross-encoder fused with hybrid order</div>
+          <dl class="mc-fields">
+            <dt>Task</dt><dd>Find the ATT&amp;CK technique, KEV entry, Sigma rule or CERT-FR advisory that answers an analyst's question, then generate an answer that cites only those sources.</dd>
+            <dt>Data</dt><dd>5,718 public documents (6,100 chunks). Benchmark of 117 questions with gold ids: techniques, mitigations, CVE nicknames, detections, raw alerts, CERT-FR and French.</dd>
+            <dt>Results</dt><dd>Recall@5 <b>0.910</b>, Recall@10 0.936, nDCG@10 0.787. Answers with Llama 3.1 8B on 112 questions: faithfulness 0.875, citation validity 0.974.</dd>
+            <dt>Limits</dt><dd>French questions score 0 with an English embedding model, and the gold Sigma rule is cited for only 40% of detection questions. Both are on the roadmap.</dd>
+          </dl>
+          <div class="lesson"><b>What I learned</b>An LLM judge alone would have picked the wrong model. It rated a 3B model more faithful than the 8B one, while the 3B model cited the right document 4× less often and stated 8× more ids found in no source. Deterministic citation checks now sit next to the judge.</div>
+        </div>
+        <div class="chart" role="img" aria-label="Recall at 5 on 117 questions: BM25 0.742, dense 0.877, hybrid 0.893, hybrid plus rerank 0.850, hybrid plus rerank fused 0.910.">
+          <div class="chart-title">Recall@5 on 117 questions · per retriever</div>
+          <div class="bars">
+            <div class="bl">BM25<small>sparse</small></div><div class="track"><div class="fill" style="width:74.2%">0.742</div></div><div class="delta down">MRR .615</div>
+            <div class="bl">dense<small>bge-small</small></div><div class="track"><div class="fill" style="width:87.7%">0.877</div></div><div class="delta down">MRR .738</div>
+            <div class="bl">hybrid<small>RRF</small></div><div class="track"><div class="fill" style="width:89.3%">0.893</div></div><div class="delta down">MRR .738</div>
+            <div class="bl">rerank<small>replaces</small></div><div class="track"><div class="fill" style="width:85%">0.850</div></div><div class="delta down">MRR .711</div>
+            <div class="bl default">fused<small>default</small></div><div class="track default"><div class="fill" style="width:91%">0.910</div></div><div class="delta up">MRR .741</div>
+          </div>
+          <div class="axis"><span></span><div><span>0</span><span>.25</span><span>.5</span><span>.75</span><span>1</span></div><span style="text-align:right">MRR@10</span></div>
+          <p class="chart-note">A reranker is not a free win: on its own it ranks narrow Sigma rules above the technique a question is about. Fusing it with the hybrid order instead of replacing it gave the best top 5, a choice made on 35 questions and confirmed on 82 new ones.</p>
+          <ol class="arch" aria-label="Pipeline steps" style="margin-top:1.4rem">
+            <li class="pulse" aria-hidden="true"></li>
+            <li><b>Ingest</b><span>ATT&amp;CK · KEV · SigmaHQ · CERT-FR · NVD on demand</span></li>
+            <li><b>Index</b><span>BM25 + Qdrant (or Chroma) dense vectors</span></li>
+            <li><b>Retrieve + rerank</b><span>RRF fusion, cross-encoder fused back in</span></li>
+            <li><b>Generate</b><span>local Llama 3.1 8B via Ollama, cited ids only</span></li>
+            <li><b>Evaluate</b><span>LLM judge + deterministic citation checks</span></li>
+          </ol>
+        </div>
+      </article>
+
       <div class="minis">
         <div class="mini spot"><span class="label">ML · cloud · 2025</span><h4>Alert scoring in AWS Lambda</h4><p>Wazuh alerts are enriched and scored by a model inside Lambda functions, so analysts see the riskiest ones first.</p></div>
         <div class="mini spot"><span class="label">Unsupervised · 2025</span><h4>Anomalies in network logs</h4><p>Clustering methods compared on how well they separate truly unusual behaviour from false positives.</p></div>
@@ -875,76 +857,96 @@ platform  AWS serverless, Docker, Kafka, Spark, Linux
     </div>
   </section>
 
+  <!-- MAIN QUEST: to start a new quest, edit the title, briefing, objectives and loot below,
+       and move the old one into "Completed quests". Objective states: done | active | locked. -->
+  <section class="part" id="quest">
+    <div class="wrap">
+      <div class="part-head">
+        <span class="num">§4</span>
+        <h2 data-scramble>Main quest</h2>
+        <p>What I am working on right now. Every new project becomes the active quest.</p>
+      </div>
+      <article class="quest">
+        <div class="quest-top">
+          <span class="quest-flag hud"><span class="bang" aria-hidden="true">!</span>Main quest · active</span>
+          <span class="quest-status hud"><i aria-hidden="true"></i>In progress</span>
+        </div>
+        <div class="quest-grid">
+          <div>
+            <h3>LoRaWAN security</h3>
+            <div class="quest-goal hud">Goal · publish a research paper</div>
+            <p class="brief">Writing a research paper on the security of LoRaWAN, the long-range radio protocol connecting millions of IoT devices. The mission: uncover weaknesses nobody has documented yet, and show how to defend against them.</p>
+            <div class="xp">
+              <div class="xp-top hud"><span>Quest progress</span><span>Hunting…</span></div>
+              <div class="xp-bar" aria-hidden="true"><span></span></div>
+            </div>
+            <canvas id="chirp" aria-label="Animated LoRa chirp spectrum"></canvas>
+            <div class="chirp-cap hud">LoRa chirp spread spectrum · illustration</div>
+          </div>
+          <div>
+            <div class="obj-head hud">Objectives</div>
+            <ul class="objectives">
+              <li class="done">Accept the quest</li>
+              <li class="active">Hunt for new findings in LoRaWAN</li>
+              <li class="locked">Publish the paper</li>
+            </ul>
+            <div class="obj-head hud" style="margin-top:1.4rem">Discoveries <span class="dim-hud">· classified until publication</span></div>
+            <div class="finds" aria-label="Findings, hidden until the paper is published">
+              <div class="find"><span class="hud">Finding #01</span><i></i></div>
+              <div class="find"><span class="hud">Finding #02</span><i></i></div>
+              <div class="find"><span class="hud">Finding #03</span><i></i></div>
+              <div class="find"><span class="hud">Finding #04</span><i></i></div>
+              <div class="find"><span class="hud">Finding #05</span><i></i></div>
+              <div class="find more"><span class="hud">+ ???</span><i></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="obj-head hud" style="margin-top:1.8rem">Loot · rewards for clearing this quest</div>
+        <div class="lootbox">
+          <div class="item legendary"><span class="glyph" aria-hidden="true">📜</span><span><b>Published research paper</b><small class="hud">Legendary</small></span></div>
+          <div class="item epic"><span class="glyph" aria-hidden="true">🗝</span><span><b>New LoRaWAN attack paths</b><small class="hud">Epic</small></span></div>
+          <div class="item epic"><span class="glyph" aria-hidden="true">🛡</span><span><b>Defenses &amp; mitigations</b><small class="hud">Epic</small></span></div>
+          <div class="item rare"><span class="glyph" aria-hidden="true">📡</span><span><b>Radio &amp; LPWAN mastery</b><small class="hud">Rare</small></span></div>
+          <div class="item rare"><span class="glyph" aria-hidden="true">🔐</span><span><b>Applied crypto skills</b><small class="hud">Rare</small></span></div>
+          <div class="item uncommon"><span class="glyph" aria-hidden="true">⚡</span><span><b>IoT security XP</b><small class="hud">Uncommon</small></span></div>
+        </div>
+      </article>
+      <a class="sidequest" href="#work"><span class="hud"><i class="live" aria-hidden="true"></i>Side quest · active</span><b>ThreatLens</b><small>RAG copilot for SOC &amp; CTI · next: model router, prompt-injection benchmark, cloud deploy</small></a>
+      <div class="log-done">
+        <span class="hud">Completed quests</span>
+        <div class="qdone">
+          <a href="#work"><span class="hud">✓ Cleared 2026 · 1st place</span><b>IDS-Blockchain</b><small>Deep-learning IDS on 16.2M flows</small></a>
+          <a href="#work"><span class="hud">✓ Cleared 2026</span><b>EcoRoute</b><small>LLM routing, −69.7% cost</small></a>
+          <a href="#recognition"><span class="hud">✓ Cleared 2025 · 2nd place</span><b>SecureIT CTF</b><small>Africa &amp; Middle East final</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="part" id="cases">
     <div class="wrap">
       <div class="part-head">
         <span class="num">§5</span>
-        <h2 data-scramble>Projects</h2>
-        <p>Case files, with the numbers that back them up.</p>
+        <h2 data-scramble>More projects</h2>
+        <p>Earlier builds across cloud, network and detection.</p>
       </div>
-      <div class="cases">
-        <article class="case lead spot">
-          <div style="display:flex;flex-direction:column;gap:.9rem;min-width:0">
-            <div class="case-id"><span class="label">CF-01 · May 2026 · Team of 4</span><span class="tag ok">1st place, ENSAM project competition</span></div>
-            <h3>IDS-Blockchain</h3>
-            <p>Real-time network intrusion detection. The flow classifier from the AI lab scores live traffic, and high-severity alerts are hashed into a private MultiChain ledger, so the alert history cannot be quietly rewritten.</p>
-            <p class="mono" style="font-size:.8rem;color:var(--muted)">My part: preprocessing, model training, evaluation and the inference API.</p>
-            <dl class="evidence">
-              <div><dt>Flows</dt><dd>16.2M</dd></div>
-              <div><dt>Macro-F1</dt><dd>0.7711</dd></div>
-              <div><dt>Accuracy</dt><dd>91.6%</dd></div>
-              <div><dt>Benign recall</dt><dd>98.6%</dd></div>
-            </dl>
-            <ul class="stack"><li>PyTorch</li><li>Spark</li><li>Kafka (KRaft)</li><li>MultiChain</li><li>Streamlit</li><li>Docker Compose</li></ul>
-            <div class="links"><a href="https://github.com/waliddoesthis/Ids-Blockchain" target="_blank" rel="noopener">Repository ↗</a></div>
-          </div>
-<pre class="flow" aria-label="Pipeline diagram"><b>traffic</b>  CICFlowMeter CSVs · 16 GB
-   │
-   ▼
-<b>spark</b>    distributed preprocessing
-   │
-   ▼
-<b>model</b>    Conv1d ×2 → BiLSTM ×2 → attention
-   │      label + severity + confidence
-   ▼
-<b>ledger</b>   SHA-256 chained alert blocks
-   │
-   ▼
-<b>console</b>  Streamlit · Kafka · Structured Streaming
-
-services decoupled by Kafka; persistent
-volumes; degrades gracefully if one dies</pre>
-        </article>
-
+      <div class="cases three">
         <article class="case spot">
-          <div class="case-id"><span class="label">CF-02 · Sept 2026</span><span class="tag ai">AI · research prototype</span></div>
-          <h3>EcoRoute</h3>
-          <p>An LLM gateway that routes each request by predicted answer quality, cost and data sensitivity. Confidential prompts never reach a model without the clearance for them.</p>
-          <dl class="evidence">
-            <div><dt>Cost saved</dt><dd>69.7%</dd></div>
-            <div><dt>Accuracy Δ</dt><dd>−0.27 pt</dd></div>
-            <div><dt>Decision</dt><dd>74 ms</dd></div>
-          </dl>
-          <ul class="stack"><li>Python</li><li>PyTorch</li><li>Graph model</li><li>PII detection</li><li>OpenAI-compatible API</li></ul>
-          <div class="links"><a href="https://github.com/waliddoesthis/ecoroute" target="_blank" rel="noopener">Repository ↗</a></div>
-        </article>
-
-        <article class="case spot">
-          <div class="case-id"><span class="label">CF-03 · Jun 2025</span><span class="tag info">Cloud · ML</span></div>
+          <div class="case-id"><span class="label">P-01 · Jun 2025</span><span class="tag info">Cloud · ML</span></div>
           <h3>Serverless SIEM + ML on AWS</h3>
           <p>Wazuh alerts are ingested, enriched and scored by a model inside AWS Lambda functions, then stored on S3. A Streamlit console runs on an EC2 instance I provisioned and configured.</p>
           <ul class="stack"><li>Wazuh</li><li>AWS Lambda</li><li>S3</li><li>EC2</li><li>Scikit-learn</li></ul>
         </article>
 
         <article class="case spot">
-          <div class="case-id"><span class="label">CF-04 · 2025</span><span class="tag med">Network</span></div>
+          <div class="case-id"><span class="label">P-02 · 2025</span><span class="tag med">Network</span></div>
           <h3>Stateful firewall in Python</h3>
           <p>An inline component that tracks connection state, applies configurable rules, and writes structured logs for every decision.</p>
           <ul class="stack"><li>Python</li><li>Connection tracking</li><li>Structured logging</li></ul>
         </article>
 
         <article class="case spot">
-          <div class="case-id"><span class="label">CF-05 · 2025</span><span class="tag ai">ML · detection</span></div>
+          <div class="case-id"><span class="label">P-03 · 2025</span><span class="tag ai">ML · detection</span></div>
           <h3>Anomaly detection on network logs</h3>
           <p>A comparison of clustering methods to separate behaviour that is truly unusual from false positives.</p>
           <ul class="stack"><li>Scikit-learn</li><li>Pandas</li><li>Clustering</li></ul>
@@ -987,11 +989,11 @@ volumes; degrades gracefully if one dies</pre>
         <div><h3>Offensive</h3><ul>
           <li>Burp Suite <span>web · API</span></li><li>Nuclei <span>automation</span></li><li>Nmap <span>recon</span></li><li>OWASP ZAP <span>scanning</span></li><li>LLM triage <span>pentest</span></li><li>OWASP Top 10, PTES <span>method</span></li></ul></div>
         <div><h3>AI &amp; ML</h3><ul>
-          <li>PyTorch <span>CNN · LSTM · attention</span></li><li>Scikit-learn <span>clustering · baselines</span></li><li>TensorFlow <span>coursework</span></li><li>LLM agents <span>routing · triage</span></li><li>Hugging Face <span>PII model</span></li><li>Pandas <span>analysis</span></li><li>Isolation Forest <span>anomalies</span></li></ul></div>
+          <li>PyTorch <span>CNN · LSTM · attention</span></li><li>Scikit-learn <span>clustering · baselines</span></li><li>TensorFlow <span>coursework</span></li><li>RAG <span>hybrid search · rerank</span></li><li>LLM evaluation <span>judge + citation checks</span></li><li>LLM agents <span>routing · triage</span></li><li>Hugging Face <span>PII model</span></li><li>Pandas <span>analysis</span></li><li>Isolation Forest <span>anomalies</span></li></ul></div>
         <div><h3>Detection</h3><ul>
-          <li>Wazuh <span>SIEM</span></li><li>Log collection &amp; alerting <span>ops</span></li><li>Anomaly detection <span>ML</span></li><li>Streamlit dashboards <span>viz</span></li></ul></div>
+          <li>Wazuh <span>SIEM</span></li><li>MITRE ATT&amp;CK, Sigma <span>CTI · detections</span></li><li>Log collection &amp; alerting <span>ops</span></li><li>Anomaly detection <span>ML</span></li><li>Streamlit dashboards <span>viz</span></li></ul></div>
         <div><h3>Data</h3><ul>
-          <li>Spark <span>batch · streaming</span></li><li>Kafka (KRaft) <span>events</span></li><li>SQL <span>daily</span></li></ul></div>
+          <li>Spark <span>batch · streaming</span></li><li>Qdrant, Chroma <span>vector search</span></li><li>Kafka (KRaft) <span>events</span></li><li>SQL <span>daily</span></li></ul></div>
         <div><h3>Cloud &amp; platform</h3><ul>
           <li>AWS Lambda, S3, EC2 <span>deployed</span></li><li>Docker, Compose <span>daily</span></li><li>FastAPI, PostgreSQL <span>built</span></li><li>RBAC, audit logging <span>secure by design</span></li><li>Proxmox, Linux <span>lab · admin</span></li><li>Azure <span>learning</span></li></ul></div>
         <div><h3>Network</h3><ul>
@@ -1020,11 +1022,11 @@ volumes; degrades gracefully if one dies</pre>
     <div class="wrap contact">
       <div>
         <div class="part-head" style="margin-bottom:1rem"><span class="num">§9</span><span class="label">Contact</span></div>
-        <p class="big">Looking for a 6-month internship from March 2027.</p>
-        <p style="max-width:32em;color:var(--muted)">End-of-studies internship (stage de fin d&rsquo;études) in AI, machine learning or cybersecurity. Anywhere in France. Write in French or English.</p>
+        <p class="big">Let&rsquo;s build something that holds up.</p>
+        <p style="max-width:34em;color:var(--muted)">Open to a 6-month end-of-studies internship (stage de fin d&rsquo;études) from March 2027 in AI, machine learning or cybersecurity, anywhere in France. Also happy to talk research, CTF teams or a project you think I would like. French or English.</p>
       </div>
       <ul class="channels spot">
-        <li><div><span class="k"><svg class="ico" style="--c:#EA4335" aria-hidden="true"><use href="#i-gmail"/></svg>Email</span><span class="v" id="email">walidichchou711@gmail.com</span></div><span style="display:flex;gap:.5rem"><a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Internship%20from%20March%202027">Send email</a><button class="btn" type="button" id="copy-email">Copy</button></span></li>
+        <li><div><span class="k"><svg class="ico" style="--c:#EA4335" aria-hidden="true"><use href="#i-gmail"/></svg>Email</span><span class="v" id="email">walidichchou711@gmail.com</span></div><span style="display:flex;gap:.5rem"><a class="btn mail" href="mailto:walidichchou711@gmail.com?subject=Hello%20Walid">Send email</a><button class="btn" type="button" id="copy-email">Copy</button></span></li>
         <li><div><span class="k"><svg class="ico" style="--c:#0a66c2" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</span><a class="v" href="https://www.linkedin.com/in/walid-ichchou-64b08a332" target="_blank" rel="noopener">in/walid-ichchou ↗</a></div></li>
         <li><div><span class="k"><svg class="ico" style="--c:#7c8cff" aria-hidden="true"><use href="#i-intigriti"/></svg>Intigriti</span><a class="v" href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener">dilawishere ↗</a></div></li>
         <li><div><span class="k"><svg class="ico" style="--c:#e7eaf6" aria-hidden="true"><use href="#i-github"/></svg>GitHub</span><a class="v" href="https://github.com/waliddoesthis" target="_blank" rel="noopener">waliddoesthis ↗</a></div></li>
@@ -1032,6 +1034,23 @@ volumes; degrades gracefully if one dies</pre>
     </div>
   </section>
 </main>
+
+<div class="shell" id="shell" aria-label="Interactive shell">
+          <div class="shell-bar"><span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>tty1 · walid@ichchou</span><span>type <b>help</b></span></div>
+          <div class="shell-out" id="shell-out" aria-live="polite"><span class="p">walid@ichchou:~$</span> whoami
+walid ichchou, security engineer who trains models
+<span class="p">walid@ichchou:~$</span> cat focus.txt
+offense   web &amp; API pentest (PTES, OWASP), bug bounty
+defense   deep-learning intrusion detection, SIEM + ML pipelines
+ai        PyTorch, attention models, RAG, LLM routing and evaluation
+platform  AWS serverless, Docker, Kafka, Spark, Linux
+<span class="dim">try: internship · experience · models · projects · sudo hire walid</span>
+</div>
+          <form class="shell-in" id="shell-form" autocomplete="off">
+            <label for="shell-input">walid@ichchou:~$</label>
+            <input id="shell-input" type="text" spellcheck="false" aria-label="Shell command">
+          </form>
+        </div>
 
 <footer>
   <div class="wrap"><span>© 2026 Walid Ichchou · written by hand, no trackers</span><span>press <b>`</b> anywhere for a shell</span></div>
@@ -1126,7 +1145,7 @@ volumes; degrades gracefully if one dies</pre>
 
   /* brand icons on chips and toolkit rows */
   var ICONS={"github": "#e7eaf6", "intigriti": "#7c8cff", "pytorch": "#EE4C2C", "tensorflow": "#FF6F00", "scikitlearn": "#F7931E", "pandas": "#b7a6ff", "huggingface": "#FFD21E", "apachekafka": "#e7eaf6", "apachespark": "#E25A1C", "docker": "#2496ED", "hackthebox": "#9FEF00", "fastapi": "#05998b", "postgresql": "#6b9cff", "burpsuite": "#FF6633", "fortinet": "#EE3124", "cisco": "#1ba0d7", "tryhackme": "#e33b4e", "redhat": "#EE0000", "streamlit": "#FF4B4B", "linux": "#FCC624", "python": "#5a9fd4", "proxmox": "#E57000", "gnubash": "#4EAA25", "git": "#F03C2E", "owasp": "#e7eaf6", "numpy": "#4dabcf", "gmail": "#EA4335", "dhl": "#FFCC00", "monzo": "#ff4f40", "jupyter": "#F37626", "linkedin": "#0a66c2", "aws": "#ff9900", "awslambda": "#ff9900", "azure": "#0078d4"};
-  var MAP={'PyTorch':'pytorch','Spark':'apachespark','Kafka (KRaft)':'apachekafka','Streamlit':'streamlit','Docker Compose':'docker','Python':'python','Wazuh':null,'AWS Lambda':'awslambda','S3':'aws','EC2':'aws','Scikit-learn':'scikitlearn','Pandas':'pandas','Burp Suite':'burpsuite','OWASP Top 10, PTES':'owasp','TensorFlow':'tensorflow','Hugging Face':'huggingface','Scikit-learn':'scikitlearn','Streamlit dashboards':'streamlit','Kafka (KRaft) ':'apachekafka','AWS Lambda, S3, EC2':'aws','Docker, Compose':'docker','Proxmox, Linux':'proxmox','Azure':'azure','FortiSASE &amp; SD-WAN':'fortinet','FortiSASE & SD-WAN':'fortinet','Python, Bash, Git':'gnubash','SQL':null,'OWASP ZAP':'owasp','FastAPI, PostgreSQL':'fastapi','Isolation Forest':'scikitlearn'};
+  var MAP={'PyTorch':'pytorch','Spark':'apachespark','Kafka (KRaft)':'apachekafka','Streamlit':'streamlit','Docker Compose':'docker','Python':'python','Wazuh':null,'AWS Lambda':'awslambda','S3':'aws','EC2':'aws','Scikit-learn':'scikitlearn','Pandas':'pandas','Burp Suite':'burpsuite','OWASP Top 10, PTES':'owasp','TensorFlow':'tensorflow','Hugging Face':'huggingface','Scikit-learn':'scikitlearn','Streamlit dashboards':'streamlit','Kafka (KRaft) ':'apachekafka','AWS Lambda, S3, EC2':'aws','Docker, Compose':'docker','Proxmox, Linux':'proxmox','Azure':'azure','FortiSASE &amp; SD-WAN':'fortinet','FortiSASE & SD-WAN':'fortinet','Python, Bash, Git':'gnubash','SQL':null,'OWASP ZAP':'owasp','FastAPI, PostgreSQL':'fastapi','Isolation Forest':'scikitlearn','FastAPI':'fastapi','Docker':'docker'};
   function deco(el,key){var s=MAP[key];if(!s)return;var svg='<svg class="ico" style="--c:'+ICONS[s]+'" aria-hidden="true"><use href="#i-'+s+'"/></svg>';el.insertAdjacentHTML('afterbegin',svg+' ');el.classList.add('chip-i')}
   document.querySelectorAll('.stack li').forEach(function(li){deco(li,li.textContent.trim())});
   document.querySelectorAll('.scope li').forEach(function(li){var k=li.firstChild&&li.firstChild.nodeType===3?li.firstChild.textContent.trim():'';var w=document.createElement('span');w.className='chip-i';w.style.cssText='font:inherit;color:inherit;font-family:inherit';if(MAP[k]){li.firstChild.textContent='';w.textContent=k;li.insertBefore(w,li.firstChild);deco(w,k)}});
@@ -1158,23 +1177,24 @@ volumes; degrades gracefully if one dies</pre>
   function esc(s){return s.replace(/[&<>]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[ch]})}
   function print(html){out.insertAdjacentHTML('beforeend',html+'\n');out.scrollTop=out.scrollHeight}
   var files={
-    'focus':'offense   web & API pentest (PTES, OWASP), bug bounty\ndefense   deep-learning intrusion detection, SIEM + ML pipelines\nai        PyTorch, attention models, LLM routing, imbalance handling\nplatform  AWS serverless, Docker, Kafka, Spark, Linux',
-    'projects':'CF-01  ids-blockchain   CNN-BiLSTM IDS + MultiChain audit log   macro-F1 0.7711\nCF-02  ecoroute         LLM gateway by quality, cost, sensitivity  -69.7% cost\nCF-03  siem-aws         Wazuh → Lambda ML scoring → S3\nCF-04  firewall.py      stateful filtering, structured logs\nCF-05  anomaly-logs     clustering vs false positives\n<span class="dim">open one: cat ids-blockchain · cat ecoroute</span>',
-    'models':'<span class="v">MC-01</span>  flow classifier   Conv1d → BiLSTM → attention · 0.98M params\n       16.2M flows · 15 classes · macro-F1 0.7711 · benign recall 98.6%\n<span class="v">MC-02</span>  ecoroute router   graph model → calibrated P(correct)\n       -69.7% cost vs GPT-4o · -0.27 pt accuracy · 74 ms median\n<span class="dim">train --explain for the lesson I learned the hard way</span>',
+    'focus':'offense   web & API pentest (PTES, OWASP), bug bounty\ndefense   deep-learning intrusion detection, SIEM + ML pipelines\nai        PyTorch, attention models, RAG, LLM routing and evaluation\nplatform  AWS serverless, Docker, Kafka, Spark, Linux',
+    'projects':'W-01   threatlens       cited RAG copilot for SOC & CTI          R@10 0.936\nW-02   ids-blockchain   CNN-BiLSTM IDS + MultiChain audit log   macro-F1 0.7711\nW-03   ecoroute         LLM gateway by quality, cost, sensitivity  -69.7% cost\nP-01   siem-aws         Wazuh → Lambda ML scoring → S3\nP-02   firewall.py      stateful filtering, structured logs\nP-03   anomaly-logs     clustering vs false positives\n<span class="dim">open one: cat ids-blockchain · cat ecoroute</span>',
+    'models':'<span class="v">MC-03</span>  threatlens rag    BM25 + dense → RRF → fused cross-encoder\n       117 questions · R@5 0.910 · faithfulness 0.875\n<span class="v">MC-01</span>  flow classifier   Conv1d → BiLSTM → attention · 0.98M params\n       16.2M flows · 15 classes · macro-F1 0.7711 · benign recall 98.6%\n<span class="v">MC-02</span>  ecoroute router   graph model → calibrated P(correct)\n       -69.7% cost vs GPT-4o · -0.27 pt accuracy · 74 ms median\n<span class="dim">train --explain for the lesson I learned the hard way</span>',
     'internship':'wanted    6-month end-of-studies internship (stage de fin d\'études)\nstart     March 2027\nfields    AI · machine learning · cybersecurity\nwhere     anywhere in France · French or English\n<span class="dim">sudo hire walid</span>',
     'experience':'Apr-Aug 26 Panafi Maroc     ML & appsec internship · invoice/stock anomaly detection\nMar-Aug 25 Plutus           AI-assisted web & API pentest (PTES, OWASP, LLM agents)\n2026-      Intigriti / HTB  bug bounty & offensive labs · DHL, Monzo, Spacelift\n2026-27    ISIMA            Master 2 CS, ICS track, double degree\n2022-27    ENSAM            engineering degree, cybersecurity & cloud computing',
     'ctf':'<span class="ok">[+]</span> SecureIT CTF 2025 · Cisco NetAcad · 2nd, Africa & Middle East\n<span class="ok">[+]</span> ENSAM project competition 2026 · 1st',
     'intigriti':'researcher  dilawishere\nprograms    DHL · Monzo · Spacelift\nstatus      first finding validated\n<a href="https://app.intigriti.com/researcher/profile/dilawishere" target="_blank" rel="noopener">app.intigriti.com/researcher/profile/dilawishere</a>',
     'contact':'email     walidichchou711@gmail.com\nlinkedin  linkedin.com/in/walid-ichchou-64b08a332\nintigriti dilawishere\ngithub    github.com/waliddoesthis',
     'ids-blockchain':'16.2M flows · 15 classes · ~0.98M params\nmacro-F1 0.7711 · accuracy 91.6% · benign recall 98.6%\nhttps://github.com/waliddoesthis/Ids-Blockchain',
+    'threatlens':'RAG copilot for SOC & CTI · ATT&CK, KEV, NVD, CERT-FR, Sigma\nhybrid BM25 + dense, RRF, cross-encoder · 117-question benchmark\nR@5 0.910 · R@10 0.936 · faithfulness 0.875 · citation validity 0.974\nhttps://github.com/waliddoesthis/threatlens',
     'ecoroute':'routes LLM calls by predicted quality, cost and data sensitivity\n-69.7% cost vs GPT-4o at -0.27 pt accuracy · 74 ms median decision\nhttps://github.com/waliddoesthis/ecoroute'
   };
   var cmds={
     quest:function(){return '<span class="v">[!] MAIN QUEST</span>  LoRaWAN security · research paper  <span class="ok">● in progress</span>\n  [x] accept the quest\n  [>] hunt for new findings in LoRaWAN\n  [ ] publish the paper\n<span class="dim">discoveries: classified until publication</span>\nloot: research paper (legendary) · new attack paths · defenses · LPWAN mastery';},
-    mail:function(){location.href='mailto:walidichchou711@gmail.com?subject=Internship%20from%20March%202027';return 'opening your mail app…'},
+    mail:function(){location.href='mailto:walidichchou711@gmail.com?subject=Hello%20Walid';return 'opening your mail app…'},
     help:function(){return 'whoami  ls  cat &lt;file&gt;  internship  quest  mail  models  projects  experience  intigriti  ctf  contact  cv\ntrain  nmap walid  clear  exit'},
-    whoami:function(){return 'walid ichchou, security engineer who trains models · looking for a 6-month internship from march 2027'},
-    ls:function(){return 'internship  focus.txt  models  projects  experience  intigriti  ctf  contact  ids-blockchain  ecoroute  cv.pdf'},
+    whoami:function(){return 'walid ichchou, security engineer who trains models · now building threatlens · open to a 6-month internship from march 2027'},
+    ls:function(){return 'internship  focus.txt  models  projects  experience  intigriti  ctf  contact  threatlens  ids-blockchain  ecoroute  cv.pdf'},
     cat:function(a){var f=(a[0]||'').replace(/\.(txt|md)$/,'');return files[f]||('<span class="err">cat: '+esc(a[0]||'')+': No such file</span>')},
     focus:function(){return files.focus},models:function(){return files.models},projects:function(){return files.projects},experience:function(){return files.experience},internship:function(){return files.internship},ctf:function(){return files.ctf},contact:function(){return files.contact},intigriti:function(){return files.intigriti},
     train:function(a){
@@ -1208,6 +1228,7 @@ volumes; degrades gracefully if one dies</pre>
   });
   function openShell(){shell.classList.add('float');input.focus()}
   document.getElementById('open-shell').addEventListener('click',function(){shell.classList.contains('float')?shell.classList.remove('float'):openShell()});
+  document.querySelectorAll('[data-open-shell]').forEach(function(b){b.addEventListener('click',openShell)});
   document.addEventListener('keydown',function(e){if(e.key==='`'&&document.activeElement!==input){e.preventDefault();openShell()}});
 
   var copy=document.getElementById('copy-email');
